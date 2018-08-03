@@ -25,7 +25,7 @@ SECRET_KEY = 'of*1_dbynim*6(&%xz8wr=*m(9^gajajk8^i)k-0wfa7j-s-(('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'final-xperrylinn-xperrylinn937359.codeanyapp.com']
+ALLOWED_HOSTS = ['0.0.0.0', 'final-xperrylinn-xperrylinn937359.codeanyapp.com', 'final-xperrylinn-kristinho836388.codeanyapp.com']
 
 
 # Application definition
@@ -52,10 +52,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'final.urls'
 
+## TO DO: REDIRECT THIS TO HOME PAGE URL
+LOGIN_REDIRECT_URL = '/thyme/homepage'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
