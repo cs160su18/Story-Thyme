@@ -1,0 +1,59 @@
+.row {
+  margin-bottom: 20px;
+}
+
+
+h4 {
+  text-transform: uppercase;
+  padding: 20px;
+  
+}
+h3 {
+  padding: 10px;
+}
+
+.search {
+  margin: 20px;
+  padding-right: 20px;
+  padding-left: 30px;
+
+}
+.top {
+  background-color: rgb(87, 87, 87);
+  padding: 3px;
+}
+
+.row {
+ 
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+body {background-color: "white";
+font-family: raleway, sans-serif;
+font-style: normal;
+font-weight: 700;
+color: rgb(245, 245, 245); }
+
+
+
+h1 {
+  font-family: capucine-web, sans-serif;
+font-style: italic;
+font-weight: 900;
+}
+
+
+textarea {
+  font-family: raleway, sans-serif;
+font-style: normal;
+font-weight: 300;
+}
+
+form {
+  font-family: raleway, sans-serif;
+font-style: normal;
+font-weight: 300;
+}
+
