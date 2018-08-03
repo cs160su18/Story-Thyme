@@ -25,12 +25,13 @@ SECRET_KEY = 'of*1_dbynim*6(&%xz8wr=*m(9^gajajk8^i)k-0wfa7j-s-(('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'final-xperrylinn-xperrylinn937359.codeanyapp.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'thyme',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
