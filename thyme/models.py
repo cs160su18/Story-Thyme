@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
  
 
 class Family(models.Model):
@@ -9,6 +10,7 @@ class Family(models.Model):
 
 class FoodUser(models.Model):
   family = models.ForeignKey(Family, on_delete=models.CASCADE) 
+  user = models.OneToOneField(User, on_delete=models.CASCADE)
 
 class Timeline(models.Model):
   dishName = models.CharField(max_length=30, primary_key=True)
