@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title></title>
+
+		<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{% static '/thyme/vendor/bootstrap/css/bootstrap.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static '/thyme/css/main.css' %}" />
+
+		<script src="{% static '/thyme/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static '/thyme/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
+	</head>
+  
+  
+	<body>
+    
+   <div class="container-fluid">
+     
+  <div class="row top">
+    <div class="col-xs-2">
+      <button type="button" class="btn btn-light"><i class="material-icons">person</i></button>
+    </div>
+    <div class="col-xs-2">
+      <button type="button" class="btn btn-light"><i class="material-icons">home</i></button>
+    </div>
+    <div class="col-xs-8 text-right">
+      <button type="button" class="btn btn-light">+</button>
+    </div>
+  </div>
+     
+  <div class="row search">
+    <div class="col-xs-12">
+      <form class="form-inline active-cyan-4">
+    <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
+    <i class="fa fa-search" aria-hidden="true"></i>
+</form>
+    </div>
+  </div>
+     
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <div class="panel panel-default"><h4>Apple Pie</h4>
+      </div>
+    </div>
+  </div>
+     
+  <div class="row" >
+    <div class="col-xs-12 text-center">
+      <div style= "background-color: rgb(231, 247, 246)" class="panel panel-default"><h3>Smith's Apple Pie</h3>
+      </div>
+    </div>
+    </div>
+     
+  <div class="row" >
+    <div class="col-xs-12 text-center">
+      <div style= "background-color: rgb(231, 247, 246)" class="panel panel-default"><h3>Ramsey's Apple Pie</h3>
+      </div>
+    </div>
+    </div>
+     
+  <div class="row" >
+    <div class="col-xs-12 text-center">
+      <div style= "background-color: rgb(231, 247, 246)" class="panel panel-default"><h3>Johnson's Apple Pie</h3>
+      </div>
+    </div>
+    </div>
+     
+  </div>
+
+
+	</body>
+</html>
