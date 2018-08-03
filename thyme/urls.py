@@ -8,5 +8,6 @@ urlpatterns = [
     path('homepage/', views.homepage, name='homepage'),
     path('createnew/', views.createnew, name='createnew'),
     path('searchresults/', views.searchresults, name='searchresults'),
+    path('namethymeline/', views.namethymeline, name='namethymeline'),
     path('homepageSearchQuery/', views.homepageSearchQuery, name='homepageSearchQuery'),
 ]
