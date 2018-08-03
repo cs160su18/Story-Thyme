@@ -6,4 +6,7 @@ import json
 from django.http import JsonResponse
 
 def index(request):
-    return render(request, 'thyme/index.html')
+  return render(request, 'thyme/index.html')
+  
+def homepage(request):
+  return render(request, 'thyme/homepage.html')
