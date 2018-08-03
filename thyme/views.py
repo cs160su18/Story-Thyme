@@ -14,6 +14,9 @@ def homepage(request):
 def searchresults(request):
   return render(request, 'thyme/searchresults.html')
 
+def createnew(request):
+  return render(request, 'thyme/createnew.html')
+
 # Process search for Timeline from homepage.html
 def homepageSearchQuery(request):
     queryDishName = request.GET.get('dishName', None)
