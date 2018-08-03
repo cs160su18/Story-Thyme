@@ -4,8 +4,9 @@
 
 
 h4 {
-  text-transform: uppercase;
+  font-size: 50px;
   padding: 20px;
+  
   
 }
 h3 {
@@ -33,16 +34,11 @@ h3 {
 body {background-color: "white";
 font-family: raleway, sans-serif;
 font-style: normal;
-font-weight: 700;
+font-weight: 300;
 color: rgb(87, 87, 87); }
 
 
 
-h1 {
-  font-family: capucine-web, sans-serif;
-font-style: italic;
-font-weight: 900;
-}
 
 
 textarea {
@@ -55,5 +51,9 @@ form {
   font-family: raleway, sans-serif;
 font-style: normal;
 font-weight: 300;
+}
+
+.btn {
+    color: rgb(0, 172, 148); 
 }
 
