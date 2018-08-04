@@ -21,3 +21,13 @@ h3 {
 .top {
   padding: 3px;
 }
+body { 
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 700; 
+}
+small {
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
