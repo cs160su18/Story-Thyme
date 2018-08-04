@@ -32,6 +32,8 @@ def search(request):
 def profile(request):
   return render(request, 'thyme/profile.html')
 
+def thymeline(request):
+  return render(request, 'thyme/thymeline.html')
 
 def mycontributedthymelines(request):
   return render(request, 'thyme/mycontributedthymelines.html')
