@@ -18,47 +18,60 @@
 	<body>
     
     
-<div class="container-fluid">
-   <div class="row">
-    <div class="col-xs-6" align="left">
-      <button type="button" class="btn btn-default btn-sm">
-          <i class="material-icons">person</i>
-        </button>
-    </div>
-    <div class="col-xs-6" align="right">
-      <button type="button" class="btn btn-default btn-sm">
-          <i class="material-icons">help_outline</i>
-        </button>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="col-xs-12 text-center">
-      <img src="https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/38391330_1211900828952949_2698874723441311744_n.jpg?_nc_cat=0&oh=afa58199588c519420870fb1a52b463f&oe=5C039A69"  height="200" width="400" class="center">
-    </div> 
-   <div class="row search">
-    <div class="col-xs-12">
-     <form class="form-inline mr-auto">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success btn-rounded btn-sm my-0" type="submit">Search</button>
-</form>
-    </div>
-  </div>
+    <div class="container-fluid">
+       <div class="row">
+        <div class="col-xs-6" align="left">
+          <button type="button" class="btn btn-default btn-sm">
+              <i class="material-icons">person</i>
+            </button>
+        </div>
+        <div class="col-xs-6" align="right">
+          <button type="button" class="btn btn-default btn-sm">
+              <i class="material-icons">help_outline</i>
+            </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <img src="https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/38391330_1211900828952949_2698874723441311744_n.jpg?_nc_cat=0&oh=afa58199588c519420870fb1a52b463f&oe=5C039A69"  height="200" width="400" class="center">
+        </div> 
+       <div class="row search">
+        <div class="col-xs-12">
+         <form class="form-inline mr-auto">
+          <input class="form-control mr-sm-2" id="searchInput" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success btn-rounded btn-sm my-0" id="submitSearch" type="submit">Search</button>
+         </form>
+        </div>
+      </div>
       <div class="row">
       </div>
-<div class = "row" align="right">
-  <div class= "col-xs-10" align="right">
-      <button type="button" class="btn btn-default btn-sm">
-          +
-        </button>
-  </div>
+      <div class = "row" align="right">
+        <div class= "col-xs-10" align="right">
+          <button type="button" class="btn btn-default btn-sm"> + </button>
+        </div>
+       </div>
       </div>
-  </div>
-</div>
+    </div>
     <script>
       
       $(document).ready(function() {
         // Process Search
+        $("#submitSearch").click(function() {
+          var searchInput = $("#searchInput").val();
+          $.ajax({
+            url: '../../life/homepageSearchQuery/',
+            data: {
+            'dishName': searchInput
+            },
+            dataType: 'json',
+            success: function(data) {
+              if (data['success'] == 'false') {
+                alert('Dish name does not exists in the database. Please try again.')
+              }
+            }  
+          });
+        });
       });
     </script>
 	</body>
