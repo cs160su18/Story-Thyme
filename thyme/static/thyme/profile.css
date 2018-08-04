@@ -21,6 +21,10 @@ button {
 .top {
   padding: 3px;
 }
-body {background-color: rgb(231, 247, 246);
+body {
+  background-color: rgb(231, 247, 246);
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 700;
 }
 
