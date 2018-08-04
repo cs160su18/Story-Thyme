@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title></title>
+
+		<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{% static '/thyme/vendor/bootstrap/css/bootstrap.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static '/thyme/writerecipe.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Amaranth:700" rel="stylesheet">
+
+
+		<script src="{% static '/thyme/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static '/thyme/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
+	</head>
+  
+	<body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-6" align="left">
+          <button type="button" class="btn btn-default btn-sm" >
+            Back
+          </button>
+        </div>
+        <div class="col-xs-6" align="right">
+          <button type="button" class="btn btn-default btn-sm">
+            Done
+          </button>
+        </div>
+      </div>
+        
+      <div class="row">
+        <div class="col-xs-12" align="center">
+          <h1>*User Name*'s *Thymeline name*</h1> <!-- Amy's Lasagna -->
+        </div> 
+      </div>
+        
+      <div class="row">
+        <div class="col-xs-4">
+          <form>
+            Serving Size:<br>
+            <input type="text" name="firstname"><br>
+          </form>
+        </div>
+        <div class="col-xs-4">
+          <form>
+          Prep Time:<br>
+          <input type="text" name="firstname"><br>
+          </form>
+        </div>
+        <div class="col-xs-4">
+          <form>
+          Cook time:<br>
+          <input type="text" name="firstname"><br>
+           </form>
+        </div>
+      </div>
+    
+    
+  
+    <div class = "row ingredients">
+     Ingredients:
+    </div>
+      
+     <div class="row ingredients">
+        <div class="col-xs-12">
+          <textarea rows="10" cols="50"> </textarea>
+        </div>
+    </div>
+      
+    <div class="row white"> <br />  </div>
+      
+    <div class = "row ingredients">
+     Directions:
+    </div>
+    <div class="row ingredients">
+      <div class="col-xs-12">
+        <textarea rows="10" cols="50"> </textarea>
+       </div>
+    </div>
+      
+    </div>
+    
+    
+	</body>
+</html>
