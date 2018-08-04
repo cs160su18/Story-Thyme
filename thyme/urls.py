@@ -14,4 +14,5 @@ urlpatterns = [
     path('homepageSearchQuery/', views.homepageSearchQuery, name='homepageSearchQuery'),
     path('profile/', views.profile, name='profile'),
     path('search/', views.search, name='search'),
+    path('mycontributedthymelines/', views.mycontributedthymelines, name='mycontributedthymelines'),
 ]
