@@ -20,6 +20,7 @@ button {
 }
 .top {
   padding: 3px;
+  background-color: rgb(245, 245, 245);
 }
 body {
   font-family: 'Amaranth', sans-serif;

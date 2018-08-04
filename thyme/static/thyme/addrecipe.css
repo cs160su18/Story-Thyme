@@ -37,3 +37,11 @@ color: rgb(0, 172, 148);
 .btn {
   color: rgb(0, 172, 148);  
 }
+
+.material-icons {
+   color: rgb(0, 172, 148); 
+}
+.top {
+  padding: 3px;
+  background-color: rgb(245, 245, 245);
+}

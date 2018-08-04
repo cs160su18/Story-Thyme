@@ -5,11 +5,16 @@
   margin: 20px;
 }
 
+.top {
+  background-color: rgb(245, 245, 245);
+}
+
 body {background-color: "white";
 font-family: raleway, sans-serif;
 font-style: normal;
 font-weight: 700;
-color: rgb(0, 104, 55); }
+color: rgb(0, 104, 55); 
+}
 
 
 h4 {
@@ -46,4 +51,12 @@ form {
   font-family: raleway, sans-serif;
 font-style: normal;
 font-weight: 300;
+}
+
+.btn {
+    color: rgb(0, 172, 148); 
+}
+
+.material-icons {
+   color: rgb(0, 172, 148); 
 }
