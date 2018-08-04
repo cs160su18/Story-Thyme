@@ -24,5 +24,14 @@ h3 {
 p {
   padding: 10px;
 }
-body {background-color: rgb(231, 247, 246);
+body {
+  background-color: rgb(231, 247, 246);
+  font-family: 'Amaranth', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+small {
+  font-family: 'Amaranth', sans-serif;
+  font-style: normal;
+  font-weight: 300;
 }
