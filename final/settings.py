@@ -28,7 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0', 'final-xperrylinn-xperrylinn937359.codeanyapp.com', 
                  'final-xperrylinn-emiliehasselmann408236.codeanyapp.com', 
-                 'final-xperrylinn-kristinho836388.codeanyapp.com']
+                 'final-xperrylinn-kristinho836388.codeanyapp.com',
+                'final-xperrylinn-sarahmowris728870.codeanyapp.com']
 
 
 
