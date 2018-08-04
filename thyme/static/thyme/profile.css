@@ -7,25 +7,42 @@
 } */
 
 h4 {
-  text-transform: uppercase;
   padding: 20px;
+  font-family: 'Amaranth', sans-serif;
+  font-style: normal;
+  font-weight: 300;
   
 }
 button {
   margin:0px;
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 300;
 }
+.btn {
+    color: rgb(0, 172, 148); 
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.material-icons {
+   color: rgb(0, 172, 148); 
+}
+
 
 .search {
   margin: 20px;
 }
 .top {
   padding: 3px;
+  background-color: rgb(245, 245, 245);
 }
 body {
   background-color: rgb(231, 247, 246);
-  font-family: 'Amaranth', sans-serif;
+  font-family: raleway, sans-serif;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 300;
 }
 small {
   font-family: 'Amaranth', sans-serif;
