@@ -15,4 +15,5 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),
     path('mycontributedthymelines/', views.mycontributedthymelines, name='mycontributedthymelines'),
     path('thymeline/', views.thymeline, name='thymeline'),
+    path('family/', views.family, name='family'),
 ]

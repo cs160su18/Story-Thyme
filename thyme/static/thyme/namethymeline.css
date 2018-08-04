@@ -3,11 +3,12 @@
   padding-right: 20px;
 }
 
-body {background-color: rgb(231, 247, 246);
-font-family: raleway, sans-serif;
-font-style: normal;
-font-weight: 300;
-color: rgb(0, 104, 55);}
+body {
+  background-color: rgb(231, 247, 246);
+  font-family:  'Amaranth', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  color: rgb(0, 104, 55);}
 
 
 h4 {
@@ -20,7 +21,7 @@ h4 {
 }
 
 h1 {
-  font-family: raleway, sans-serif;
+  font-family:  'Amaranth', sans-serif;
 font-style: normal;
 font-weight: 700;
 color: rgb(0, 104, 55);

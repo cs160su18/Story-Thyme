@@ -29,6 +29,9 @@ def addrecipe(request):
 def profile(request):
   return render(request, 'thyme/profile.html')
 
+def family(request):
+  return render(request, 'thyme/family.html')
+
 def thymeline(request):
   return render(request, 'thyme/thymeline.html')
 
