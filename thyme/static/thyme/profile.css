@@ -1,0 +1,26 @@
+.row {
+  margin-bottom: 20px;
+}
+
+/* .btn {
+  background-color: #009F8A;
+} */
+
+h4 {
+  text-transform: uppercase;
+  padding: 20px;
+  
+}
+button {
+  margin:0px;
+}
+
+.search {
+  margin: 20px;
+}
+.top {
+  padding: 3px;
+}
+body {background-color: rgb(231, 247, 246);
+}
+
