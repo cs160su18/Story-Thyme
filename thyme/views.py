@@ -20,6 +20,12 @@ def createnew(request):
 def namethymeline(request):
   return render(request, 'thyme/namethymeline.html')
 
+def writerecipe(request):
+  return render(request, 'thyme/writerecipe.html')
+
+def addrecipe(request):
+  return render(request, 'thyme/addrecipe.html')
+
 # Process search for Timeline from homepage.html
 def homepageSearchQuery(request):
     queryDishName = request.GET.get('dishName', None)

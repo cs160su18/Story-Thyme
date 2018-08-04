@@ -9,5 +9,7 @@ urlpatterns = [
     path('createnew/', views.createnew, name='createnew'),
     path('searchresults/', views.searchresults, name='searchresults'),
     path('namethymeline/', views.namethymeline, name='namethymeline'),
+    path('addrecipe/', views.addrecipe, name='addrecipe'),
+    path('writerecipe/', views.writerecipe, name='writerecipe'),
     path('homepageSearchQuery/', views.homepageSearchQuery, name='homepageSearchQuery'),
 ]
