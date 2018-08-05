@@ -34,15 +34,15 @@
                eight="200" width="400" class="center"> </div> 
       </div>
       <div class="row search">
-        <div class="col-12 text-left">
-         <form class="form-inline mr-auto">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success btn-rounded btn-sm my-0" type="submit">Search</button>
-          </form>
+        <div class="col-12">
+          <input class="form-control mr-sm-2" id="searchInput" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success btn-rounded btn-sm my-0" id="submitSearch" type="submit">
+            <a id="href" href="">
+              Search
+            </a>
+          </button>
         </div>
       </div>
-    </div>
-    <script>      
     </div>
     <script>
       $(document).ready(function() {
