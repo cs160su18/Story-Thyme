@@ -7,9 +7,9 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('homepage/', views.homepage, name='homepage'),
     path('createnew/', views.createnew, name='createnew'),
+    path('searchresults/<dishName>/', views.searchresults, name='searchresults'),
     path('searchresults/', views.searchresults, name='searchresults'),
     path('namethymeline/', views.namethymeline, name='namethymeline'),
     path('addrecipe/', views.addrecipe, name='addrecipe'),
     path('writerecipe/', views.writerecipe, name='writerecipe'),
-    path('homepageSearchQuery/', views.homepageSearchQuery, name='homepageSearchQuery'),
 ]

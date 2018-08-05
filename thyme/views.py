@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django.core import serializers
 from thyme.models import *
 from django.core.serializers import serialize
@@ -9,10 +9,24 @@ def index(request):
   return render(request, 'thyme/index.html')
   
 def homepage(request):
+  print("Hello World! From homepage views.py")
   return render(request, 'thyme/homepage.html')
 
-def searchresults(request):
-  return render(request, 'thyme/searchresults.html')
+def searchresults(request, dishName=''):
+  print("Hello World! From searchresults views.py")
+  print("dishName: ", dishName)
+  timelines = Timeline.objects.filter(dishName=dishName)
+  obj = {}
+  data = {}
+  obj['data'] = data
+  counter = 0
+  for timeline in timelines:
+    data["timeline" + str(counter)] = helper(timeline)
+    print(timeline.family.surname)
+    counter = counter + 1
+  print(timelines)
+  print(obj)
+  return render(request, 'thyme/searchresults.html', obj)
 
 def createnew(request):
   return render(request, 'thyme/createnew.html')
@@ -25,25 +39,6 @@ def writerecipe(request):
 
 def addrecipe(request):
   return render(request, 'thyme/addrecipe.html')
-
-# Process search for Timeline from homepage.html
-def homepageSearchQuery(request):
-    queryDishName = request.GET.get('dishName', None)
-    dishNameExists = Timeline.objects.filter(dishName=queryDishName).exists()
-    if dishNameExists:
-      timeslines = Timeline.objects.filter(dishName=queryDishName)
-      obj = {}
-      counter = 0
-      for timeline in timelines:
-          obj["timeline" + str(counter)] = helper(timeline)
-          counter = counter + 1
-      return JsonResponse(obj)
-    else:
-      # Timeline doesn't exist
-      data = {
-        'success': 'timeline_error'
-      }
-      return JsonResponse(data) 
   
 def helper(timeline):
     data = {
@@ -51,3 +46,4 @@ def helper(timeline):
       'surname': timeline.family.surname
     }
     return data
+  
