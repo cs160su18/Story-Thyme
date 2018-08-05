@@ -70,7 +70,7 @@ def thymeline(request):
 
 def mycontributedthymelines(request):
   return render(request, 'thyme/mycontributedthymelines.html')
-<<<<<<< HEAD
+
 
 def viewrecipe(request):
   return render(request, 'thyme/viewrecipe.html')
@@ -94,9 +94,7 @@ def homepageSearchQuery(request):
       }
       return JsonResponse(data) 
   
-=======
- 
->>>>>>> a46030e6cfedd92d1d1f8deac1a707467f2551a1
+
 def helper(timeline):
     data = {
       'success': 'true',
