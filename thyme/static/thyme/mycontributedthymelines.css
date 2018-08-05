@@ -13,6 +13,9 @@ h4 {
 }
 h3 {
   padding: 10px;
+  font-family: 'Amaranth', sans-serif;
+  font-style: normal;
+  font-weight: 300;
 }
 
 .search {
@@ -23,13 +26,15 @@ h3 {
 }
 
 body { 
-  font-family: 'Amaranth', sans-serif;
-  font-style: normal;
-  font-weight: 700; 
-}
-small {
-  font-family: 'Amaranth', sans-serif;
+  font-family: raleway, sans-serif;
   font-style: normal;
   font-weight: 300;
+  font-size: 30px;
+}
+small {
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
 }
 

@@ -57,6 +57,9 @@ def thymeline(request):
 def mycontributedthymelines(request):
   return render(request, 'thyme/mycontributedthymelines.html')
 
+def viewrecipe(request):
+  return render(request, 'thyme/viewrecipe.html')
+
 # Process search for Timeline from homepage.html
 def homepageSearchQuery(request):
     queryDishName = request.GET.get('dishName', None)
