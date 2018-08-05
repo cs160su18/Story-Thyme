@@ -15,7 +15,7 @@ class Timeline(models.Model):
   familyName = models.CharField(max_length=30, default='Default Family Name', primary_key=True)
   dishName = models.CharField(max_length=30)
   family = models.ForeignKey(Family, on_delete=models.CASCADE)
-  favorites = models.ManyToManyField(FoodUser)
+#   favorites = models.ManyToManyField(FoodUser)
 
 class Recipe(models.Model):
   recipeName = models.TextField(max_length=30, primary_key=True)
@@ -28,6 +28,6 @@ class Recipe(models.Model):
 class Timepoint(models.Model):
   date = models.DateField()
   story = models.TextField()
-  recipe = models.OneToOneField(Recipe, on_delete=models.CASCADE)
-  author = models.OneToOneField(FoodUser, on_delete=models.CASCADE)
-  timeline = models.ForeignKey(Timeline, on_delete=models.CASCADE)
+  recipe = models.OneToOneField(Recipe, on_delete=models.CASCADE, blank=True, null=True)
+  author = models.OneToOneField(FoodUser, on_delete=models.CASCADE, blank=True, null=True)
+  timeline = models.ForeignKey(Timeline, on_delete=models.CASCADE, blank=True, null=True)

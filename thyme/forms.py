@@ -30,3 +30,19 @@ class RecipeForm(forms.Form):
         cook_time = cleaned_data.get('cook_time')
         if not recipe_name or not ingredients or not directions or not servings or not prep_time or not cook_time:
             raise forms.ValidationError('Please enter text in all required fields!')
+  
+class TimepointForm(forms.Form):
+     date = forms.DateField()
+     story = forms.CharField(
+        max_length=2000,
+        widget=forms.Textarea(),
+        help_text='How did you change your family recipe? Write your story here.'
+     )
+      
+     def clean(self):
+        cleaned_data = super(TimepointForm, self).clean()       
+        date = cleaned_data.get('date')
+        story = cleaned_data.get('story')
+        if not date or not story:
+            raise forms.ValidationError('Please enter text in all required fields!')
+      

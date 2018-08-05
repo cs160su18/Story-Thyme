@@ -4,7 +4,7 @@ from thyme.models import *
 from django.core.serializers import serialize
 import json
 from django.http import JsonResponse
-from .forms import RecipeForm
+from .forms import RecipeForm, TimepointForm
 
 def index(request):
   return render(request, 'thyme/index.html')
@@ -59,7 +59,23 @@ def writerecipe(request):
   return render(request, 'thyme/writerecipe.html', {'form': form})
 
 def addrecipe(request):
-  return render(request, 'thyme/addrecipe.html')
+  if request.method == 'POST':
+    form = TimepointForm(request.POST)
+    if form.is_valid():
+      print("FORM IS VALID, HERE IS DATA:")
+      print(form.cleaned_data) # testing for now
+      date = form.cleaned_data['date']
+      story = form.cleaned_data['story']
+    
+      # create a new Timepoint and save it to Database
+      # TO DO: fill in the null fields e.g. the current user
+      # TO DO: fill in the recipe (from next page) and timeline (from previous page)
+      timepoint = Timepoint(date=date, story=story)
+      timepoint.save()
+  else:
+    print("TIMEPOINT FORM IS NOT VALID!!!")
+    form = TimepointForm()
+  return render(request, 'thyme/addrecipe.html', {'form': form})
 
 def profile(request):
   return render(request, 'thyme/profile.html')
