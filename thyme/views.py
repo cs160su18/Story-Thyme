@@ -4,6 +4,7 @@ from thyme.models import *
 from django.core.serializers import serialize
 import json
 from django.http import JsonResponse
+from .forms import RecipeForm
 
 def index(request):
   return render(request, 'thyme/index.html')
@@ -21,7 +22,25 @@ def namethymeline(request):
   return render(request, 'thyme/namethymeline.html')
 
 def writerecipe(request):
-  return render(request, 'thyme/writerecipe.html')
+  if request.method == 'POST':
+    form = RecipeForm(request.POST)
+    if form.is_valid():
+      print("FORM IS VALID, HERE IS DATA:")
+      print(form.cleaned_data) # testing for now
+      recipe_name = form.cleaned_data['recipe_name']
+      ingredients = form.cleaned_data['ingredients']
+      directions = form.cleaned_data['directions']
+      servings = form.cleaned_data['servings']
+      prep_time = form.cleaned_data['prep_time']
+      cook_time = form.cleaned_data['cook_time']
+      
+      # create a new Recipe and save it to Database (name, ingredients, directions for now)
+      recipe = Recipe(recipeName =recipe_name, ingredients=ingredients, directions=directions)
+      recipe.save()
+  else:
+    print("FORM IS NOT VALID!!!")
+    form = RecipeForm()
+  return render(request, 'thyme/writerecipe.html', {'form': form})
 
 def addrecipe(request):
   return render(request, 'thyme/addrecipe.html')
@@ -43,7 +62,7 @@ def homepageSearchQuery(request):
     queryDishName = request.GET.get('dishName', None)
     dishNameExists = Timeline.objects.filter(dishName=queryDishName).exists()
     if dishNameExists:
-      timeslines = Timeline.objects.filter(dishName=queryDishName)
+      timelines = Timeline.objects.filter(dishName=queryDishName)
       obj = {}
       counter = 0
       for timeline in timelines:

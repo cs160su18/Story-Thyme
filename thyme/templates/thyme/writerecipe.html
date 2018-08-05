@@ -19,62 +19,28 @@
 	</head>
   
 	<body>
-    <div class="container-fluid">
+   
+   
+ <div class="container-fluid">
       <div class="row top">
         <div class="col-6" align="left">
           <button type="button" class="btn btn-defaut\lt"><i class="material-icons">arrow_back</i></button>
         </div>
         <div class="col-6" align="right">
           <button type="button" class="btn btn-default">
-            Done
+            Next
           </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12" align="center">
-          <h1>*User Name*'s *Thymeline name*</h1> <!-- Amy's Lasagna -->
-        </div> 
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <form>
-            Serving Size:<br>
-            <input type="text" name="servingsize"  style="border:solid 1px  rgb(0, 172, 148)" class= "ingredients"><br>
-          </form>
-        </div>
-        <div class="col-4">
-          <form>
-          Prep Time:<br>
-          <input type="text" name="preptime"  style="border:solid 1px  rgb(0, 172, 148)" class= "ingredients"><br>
-          </form>
-        </div>
-        <div class="col-3">
-          <form>
-          Cook time:<br>
-          <input type="text" name="cooktime"  style="border:solid 1px  rgb(0, 172, 148)" class= "ingredients"><br>
-           </form>
-        </div>
-      </div>
 
-    <div class = "row">
-     Ingredients:
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <textarea rows="10" cols="100" style="border:solid 1px  rgb(0, 172, 148)" class= "ingredients"> </textarea>
-      </div>
-    </div>
-      
-    <div class="row white"> <br />  </div>
-      
-    <div class = "row">
-     Directions:
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <textarea rows="10" cols="100" style="border:solid 1px  rgb(0, 172, 148)" class= "ingredients"> </textarea>    
-      </div>
-    </div> 
+      <form method="post" novalidate>
+        {% csrf_token %}
+         <table>
+          {{ form }}
+         </table>
+         <button type="submit">Submit</button>
+      </form>
+
     </div>
 	</body>
 </html>
