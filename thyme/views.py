@@ -34,8 +34,8 @@ def writerecipe(request):
       prep_time = form.cleaned_data['prep_time']
       cook_time = form.cleaned_data['cook_time']
       
-      # create a new Recipe and save it to Database (name, ingredients, directions for now)
-      recipe = Recipe(recipeName =recipe_name, ingredients=ingredients, directions=directions)
+      # create a new Recipe and save it to Database
+      recipe = Recipe(recipeName =recipe_name, ingredients=ingredients, directions=directions, servings=servings, prepTime = prep_time, cookTime = cook_time)
       recipe.save()
   else:
     print("FORM IS NOT VALID!!!")
