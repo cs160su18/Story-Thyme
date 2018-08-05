@@ -7,14 +7,15 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('homepage/', views.homepage, name='homepage'),
     path('createnew/', views.createnew, name='createnew'),
+    path('searchresults/<dishName>/', views.searchresults, name='searchresults'),
     path('searchresults/', views.searchresults, name='searchresults'),
     path('namethymeline/', views.namethymeline, name='namethymeline'),
     path('addrecipe/', views.addrecipe, name='addrecipe'),
     path('writerecipe/', views.writerecipe, name='writerecipe'),
-    path('homepageSearchQuery/', views.homepageSearchQuery, name='homepageSearchQuery'),
     path('profile/', views.profile, name='profile'),
     path('mycontributedthymelines/', views.mycontributedthymelines, name='mycontributedthymelines'),
     path('thymeline/', views.thymeline, name='thymeline'),
     path('family/', views.family, name='family'),
     path('viewrecipe/', views.viewrecipe, name='viewrecipe'),
 ]
+

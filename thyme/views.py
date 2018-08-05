@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django.core import serializers
 from thyme.models import *
 from django.core.serializers import serialize
@@ -10,10 +10,24 @@ def index(request):
   return render(request, 'thyme/index.html')
   
 def homepage(request):
+  print("Hello World! From homepage views.py")
   return render(request, 'thyme/homepage.html')
 
-def searchresults(request):
-  return render(request, 'thyme/searchresults.html')
+def searchresults(request, dishName=''):
+  print("Hello World! From searchresults views.py")
+  print("dishName: ", dishName)
+  timelines = Timeline.objects.filter(dishName=dishName)
+  obj = {}
+  data = {}
+  obj['data'] = data
+  counter = 0
+  for timeline in timelines:
+    data["timeline" + str(counter)] = helper(timeline)
+    print(timeline.family.surname)
+    counter = counter + 1
+  print(timelines)
+  print(obj)
+  return render(request, 'thyme/searchresults.html', obj)
 
 def createnew(request):
   return render(request, 'thyme/createnew.html')
@@ -56,6 +70,7 @@ def thymeline(request):
 
 def mycontributedthymelines(request):
   return render(request, 'thyme/mycontributedthymelines.html')
+<<<<<<< HEAD
 
 def viewrecipe(request):
   return render(request, 'thyme/viewrecipe.html')
@@ -79,9 +94,13 @@ def homepageSearchQuery(request):
       }
       return JsonResponse(data) 
   
+=======
+ 
+>>>>>>> a46030e6cfedd92d1d1f8deac1a707467f2551a1
 def helper(timeline):
     data = {
       'success': 'true',
       'surname': timeline.family.surname
     }
     return data
+
