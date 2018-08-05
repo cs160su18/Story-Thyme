@@ -17,6 +17,8 @@ def searchresults(request, dishName=''):
   print("Hello World! From searchresults views.py")
   print("dishName: ", dishName)
   timelines = Timeline.objects.filter(dishName=dishName)
+  print("timelines: ", Timeline.objects)
+  print("timelines.filter: ", timelines)
   obj = {}
   data = {}
   obj['data'] = data
@@ -98,7 +100,9 @@ def homepageSearchQuery(request):
 def helper(timeline):
     data = {
       'success': 'true',
-      'surname': timeline.family.surname
+#       'surname': timeline.family.surname
+      'surname': timeline.familyName
+
     }
     return data
 
