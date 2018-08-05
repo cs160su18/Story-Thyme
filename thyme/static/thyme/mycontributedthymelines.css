@@ -1,0 +1,35 @@
+.row {
+  margin-bottom: 20px;
+}
+
+/* .btn {
+  background-color: #009F8A;
+} */
+
+h4 {
+  text-transform: uppercase;
+  padding: 20px;
+  
+}
+h3 {
+  padding: 10px;
+}
+
+.search {
+  margin: 20px;
+}
+.top {
+  padding: 3px;
+}
+
+body { 
+  font-family: 'Amaranth', sans-serif;
+  font-style: normal;
+  font-weight: 700; 
+}
+small {
+  font-family: 'Amaranth', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+

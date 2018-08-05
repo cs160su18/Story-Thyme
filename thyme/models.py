@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
  
-
 class Family(models.Model):
   surname = models.CharField(max_length=30, primary_key=True) 
   
@@ -21,6 +20,9 @@ class Recipe(models.Model):
   recipeName = models.TextField(max_length=30, primary_key=True)
   ingredients = models.TextField()
   directions = models.TextField()
+  servings = models.IntegerField()
+  prepTime = models.IntegerField()
+  cookTime = models.IntegerField()
   
 class Timepoint(models.Model):
   date = models.DateField()

@@ -1,0 +1,62 @@
+.row {
+ 
+  padding-right: 20px;
+  padding-left: 20px;
+  margin: 20px;
+}
+
+.top {
+  background-color: rgb(245, 245, 245);
+}
+
+body {background-color: "white";
+font-family: raleway, sans-serif;
+font-style: normal;
+font-weight: 700;
+color: rgb(0, 104, 55); 
+}
+
+
+h4 {
+  text-transform: uppercase;
+}
+
+.search {
+  padding-right: 20px;
+  padding-left: 30px;
+}
+
+.ingredients {
+  background-color: rgb(231, 247, 246);
+}
+
+h1 {
+font-family: 'Amaranth', sans-serif;
+font-style: italic;
+font-weight: 900;
+font-size: 40px;
+}
+
+.white {
+  background-color: "white";
+}
+
+textarea {
+  font-family: raleway, sans-serif;
+font-style: normal;
+font-weight: 300;
+}
+
+form {
+  font-family: raleway, sans-serif;
+font-style: normal;
+font-weight: 300;
+}
+
+.btn {
+    color: rgb(0, 172, 148); 
+}
+
+.material-icons {
+   color: rgb(0, 172, 148); 
+}

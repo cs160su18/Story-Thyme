@@ -1,0 +1,44 @@
+.row {
+  margin-bottom: 20px;
+}
+
+.btn {
+    color: rgb(0, 172, 148); 
+}
+
+.material-icons {
+   color: rgb(0, 172, 148); 
+}
+
+
+h4 {
+  text-transform: uppercase;
+  padding: 20px;
+  
+}
+h3 {
+  padding: 10px;
+}
+
+.search {
+  margin: 20px;
+}
+.top {
+  padding: 10px;
+  background-color: rgb(245, 245, 245);
+ 
+}
+p {
+  padding: 10px;
+}
+body {
+  background-color: rgb(231, 247, 246);
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+small {
+  font-family: 'Amaranth', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
