@@ -6,10 +6,6 @@
     color: rgb(0, 172, 148); 
 }
 
-.material-icons {
-   color: rgb(0, 172, 148); 
-}
-
 
 h4 {
   padding: 20px;
@@ -55,6 +51,7 @@ body {
     font-family: raleway, sans-serif;
     font-style: normal;
     font-weight: 300;
+    color: rgb(0, 104, 55); 
 }
 
 /* The actual timeline (the vertical ruler) */

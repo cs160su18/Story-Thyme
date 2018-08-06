@@ -1,5 +1,6 @@
 .material-icons {
-  font-size: 100px;
+  margin-top:20px;
+  font-size: 48px;
 }
 
 .row {
@@ -20,10 +21,7 @@ h4 {
   background-color: "white";
   color: rgb(0, 172, 148);
 } 
-.top {
-  padding: 100px;
-  
-}
+
 
 input {
     height: 100px;

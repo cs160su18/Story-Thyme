@@ -4,10 +4,14 @@
   padding-left: 20px;
 }
 
-body {background-color: "white";
-font-family: raleway, sans-serif;
-font-style: normal;
-font-weight: 300;}
+body {
+  background-color: rgb(231, 247, 246);
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  color: rgb(0, 104, 55); 
+  font-size: 30px;
+}
 
 /* .btn {
   background-color: #009F8A;
@@ -34,11 +38,6 @@ font-weight: 700;
 color: rgb(0, 172, 148); 
 }
 
-.btn {
-  color: rgb(0, 172, 148);  
-  background-color: "white"
-}
-
 .material-icons {
    color: rgb(0, 172, 148); 
 }
@@ -46,3 +45,19 @@ color: rgb(0, 172, 148);
   padding: 3px;
   background-color: rgb(245, 245, 245);
 }
+
+.btn {
+  color: rgb(0, 172, 148); 
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  background-color: "white";
+  font-size: 48px;
+}
+.save {
+  font-family: raleway, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  color: rgb(0, 104, 55);  
+}
+
