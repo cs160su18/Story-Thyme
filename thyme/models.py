@@ -38,3 +38,6 @@ class Timepoint(models.Model):
   author = models.ForeignKey(FoodUser, on_delete=models.CASCADE)
   recipe = models.OneToOneField(Recipe, on_delete=models.CASCADE, blank=True, null=True)
   timeline = models.ForeignKey(Timeline, on_delete=models.CASCADE, blank=True, null=True)
+  
+  def __str__(self):
+    return "Date: " + str(self.date) + " | Story: " + self.story
