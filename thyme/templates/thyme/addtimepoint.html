@@ -14,7 +14,9 @@
 		<script src="{% static '/thyme/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
 		<script src="{% static '/thyme/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
 	</head>
+  
   <body>
+<<<<<<< HEAD
       <div class="container-fluid">
   <div class="row top">
     <div class="col-3">
@@ -40,6 +42,30 @@
           <button type="submit" class="save" style="background-color: white">Save</button>
         </form>
         
+=======
+    <div class="container-fluid">
+      <div class="row top">        
+        <div class="col-3">
+          <a href="/thyme/homepage"  class="btn btn-default btn-sm">
+            Cancel
+          </a>
+        </div>        
+        <div class="col-3">
+          <a href="/thyme/writerecipe"  class="btn btn-default btn-sm">
+            Next
+          </a>
+        </div>        
+        <div class="col-9 text-right">
+        </div>
+      </div>
+      <form method="post" novalidate>
+        {% csrf_token %}
+         <table>
+          {{ form }}
+         </table>             
+         <button type="submit">Save</button>
+      </form>
+>>>>>>> 811ae5dedd16ca94e8e49bc3dc973ccdda1b2575
     </div>
   </body>
 </html>
