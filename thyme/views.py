@@ -159,6 +159,7 @@ def writerecipe(request):
 
 def addtimepoint(request): 
   """ Save a new Timepoint and render the Add Timepoint view"""
+  print("add timepoint being called")
   if request.method == 'POST':
     print("timepoint form is valid")
     form = TimepointForm(request.POST)
