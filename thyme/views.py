@@ -69,7 +69,7 @@ def writerecipe(request):
     form = RecipeForm()
   return render(request, 'thyme/writerecipe.html', {'form': form})
 
-def addrecipe(request): 
+def addtimepoint(request): 
   """ Save a new Timepoint and render the Add Timepoint view"""
   if request.method == 'POST':
     form = TimepointForm(request.POST)
@@ -84,7 +84,7 @@ def addrecipe(request):
       timepoint.save()
   else:
     form = TimepointForm()
-  return render(request, 'thyme/addrecipe.html', {'form': form})
+  return render(request, 'thyme/addtimepoint.html', {'form': form})
 
 def profile(request):
   return render(request, 'thyme/profile.html')

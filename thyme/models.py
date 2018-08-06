@@ -28,6 +28,6 @@ class Recipe(models.Model):
 class Timepoint(models.Model):
   date = models.DateField()
   story = models.TextField()
+  author = models.ForeignKey(FoodUser, on_delete=models.CASCADE)
   recipe = models.OneToOneField(Recipe, on_delete=models.CASCADE, blank=True, null=True)
-  author = models.ForeignKey(FoodUser, on_delete=models.CASCADE, blank=True, null=True)
   timeline = models.ForeignKey(Timeline, on_delete=models.CASCADE, blank=True, null=True)
