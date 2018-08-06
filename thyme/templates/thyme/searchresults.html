@@ -51,11 +51,23 @@
       };
       HelloWorld(); 
 */
-      
+
+/*      
+      Pseudocode:
+      1. DONE; Want to make displayed timelines clickable elements 
+      2. Detect click on one of them, and pass that timeline's PK from searchresults>thymeline 
+         via same method as homepage>searchresults
+*/      
+           
       $(document).ready(function() {
         {% for timeline in data.values %}
           console.log("{{timeline.display_text}}");
-          $("#timelines").append("<p>" + "{{timeline.display_text}}" + "</p>");
+           $("#timelines").append("<div class='panel panel-default' id='thymelines'>" + 
+                                  "<a href='/thyme/thymeline' class='btn-med btn-light btn-block'>" +
+                                  "{{timeline.display_text}}" + 
+                                  "</a>" +
+                                  "</div>"); 
+                
         {% endfor %}
       });
          
