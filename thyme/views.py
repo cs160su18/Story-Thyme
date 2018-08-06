@@ -4,7 +4,7 @@ from thyme.models import *
 from django.core.serializers import serialize
 import json
 from django.http import JsonResponse
-from .forms import RecipeForm
+from .forms import RecipeForm, TimepointForm
 
 def index(request):
   return render(request, 'thyme/index.html')
@@ -29,18 +29,17 @@ def searchresults(request, dishName=''):
   print(obj)
   return render(request, 'thyme/searchresults.html', obj)
 
-def createnew(request):
-  return render(request, 'thyme/createnew.html')
+def selectthymeline(request):
+  return render(request, 'thyme/selectthymeline.html')
 
-def namethymeline(request):
-  return render(request, 'thyme/namethymeline.html')
+def createthymeline(request):
+  return render(request, 'thyme/createthymeline.html')
 
 def writerecipe(request):
+  """ Save a new Recipe and render the Write Recipe view"""  
   if request.method == 'POST':
     form = RecipeForm(request.POST)
     if form.is_valid():
-      print("FORM IS VALID, HERE IS DATA:")
-      print(form.cleaned_data) # testing for now
       recipe_name = form.cleaned_data['recipe_name']
       ingredients = form.cleaned_data['ingredients']
       directions = form.cleaned_data['directions']
@@ -49,15 +48,41 @@ def writerecipe(request):
       cook_time = form.cleaned_data['cook_time']
       
       # create a new Recipe and save it to Database
-      recipe = Recipe(recipeName =recipe_name, ingredients=ingredients, directions=directions, servings=servings, prepTime = prep_time, cookTime = cook_time)
+      recipe = Recipe(recipeName=recipe_name, 
+                      ingredients=ingredients, 
+                      directions=directions, 
+                      servings=servings, 
+                      prepTime=prep_time, 
+                      cookTime=cook_time)
       recipe.save()
+           
+      # debugging note: the logged in User must be associated with a FoodUser manually (through admin)
+      foodUser = FoodUser.objects.filter(user=request.user)[0] 
+      
+      # save recipe to latest time point created by this user
+      latestTimePoint = Timepoint.objects.filter(author=foodUser).order_by('-date')[0] # order by date descending
+      latestTimePoint.recipe = recipe
+      latestTimePoint.save()            
   else:
-    print("FORM IS NOT VALID!!!")
     form = RecipeForm()
   return render(request, 'thyme/writerecipe.html', {'form': form})
 
-def addrecipe(request):
-  return render(request, 'thyme/addrecipe.html')
+def addtimepoint(request): 
+  """ Save a new Timepoint and render the Add Timepoint view"""
+  if request.method == 'POST':
+    form = TimepointForm(request.POST)
+    if form.is_valid():
+      date = form.cleaned_data['date']
+      story = form.cleaned_data['story']
+    
+      # create a new Timepoint and save it to Database
+      foodUser = FoodUser.objects.filter(user=request.user)[0]
+      timepoint = Timepoint(date=date, story=story, author=foodUser)  
+      # TO DO: fill in the Timeline field of Timepoint with info from previous page     
+      timepoint.save()
+  else:
+    form = TimepointForm()
+  return render(request, 'thyme/addtimepoint.html', {'form': form})
 
 def profile(request):
   return render(request, 'thyme/profile.html')

@@ -27,7 +27,7 @@
   <div class="row" align="center">
     <div class="col-12 text-center">
       <div class="panel panel-default">
-        <a href="/thyme/namethymeline" class="btn btn-light btn-block"> 
+        <a href="/thyme/createthymeline" class="btn btn-light btn-block"> 
           <h2>Create New + </h2> 
         </a>
         
@@ -39,9 +39,7 @@
     Add to existing:
     </div>
       <div class="row" align="center">
-
     <div class="col-12 text-center"><div class="panel panel-default"><a href="/thyme/addtimepoint" class="btn btn-light btn-block"><h3>  *User's family thymelines </h3> </a>
-
       
     </div>
   </div>
@@ -50,14 +48,5 @@
   
     </div>
 </body>
-  
-  <script>  $(document).ready(function() {
-        {% for timeline in data.values %}
-          $("#thymelines").append("<a href="/thyme/addrecipe" class="btn btn-light btn-block">" 
-                                  + "{{timeline.surname}}" 
-                                  + " </a>");
-        {% endfor %}
-      });
-  </script>
 </html>
 
