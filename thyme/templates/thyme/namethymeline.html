@@ -19,34 +19,80 @@
   
 	<body>
     <div class="container-fluid">
-  <div class="row" style="background-color: rgb(245, 245, 245)">
-    <div class="col-3">
-      <button type="button" class="btn btn-default btn-sm">
-          <i class="material-icons">arrow_back</i>
-        </button>
-    </div>
+      <div class="row" style="background-color: rgb(245, 245, 245)">
+        <div class="col-3">
+          <button type="button" class="btn btn-default btn-sm">
+            <i class="material-icons">arrow_back</i>
+          </button>
+        </div>
       </div>
-  <div class="row">
-    <div class="col-12 text-center" align="center">
-      <h1>Create Recipe Thymeline</h1>
-    </div> 
-    </div>
-<div class="row" align="center">
-    <div class="col-12">
-      <form>
- Enter thymeline name:<br>
-  <input type="text" name="thymelineName"><br>
-</form>
-    </div>
-  </div>
+      <div class="row">
+        <div class="col-12 text-center" align="center">
+          <h1>Create Recipe Thymeline</h1>
+        </div> 
+      </div>
+      <div class="row" align="center">
+        <div class="col-12">
+            Enter thymeline name:<br>
+            <input type="text" id="thymelineNameInput"><br>
+        </div>
+      </div>
+      <div class="row" align="center">
+        <div class="col-12">
+            Enter family name:<br>
+            <input type="text" id="familyNameInput"><br>
+        </div>
+      </div>
      <div class="row" align="right">
-    <div class="col-12" align="right">
-      <button type="button" class="btn btn-default btn-sm">
-          Add a recipe to your new thymeline!
+      <div class="col-12" align="center">
+        <button type="button" class="btn btn-default btn-sm" id="submitNewThymeline">
+          Add
         </button>
+      </div>
     </div>
-    </div>
-</div>
-      
+   </div>
+    <script>
+     $(document).ready(function() {
+        function getCookie(name) {
+          var cookieValue = null;
+          if (document.cookie && document.cookie !== '') {
+              var cookies = document.cookie.split(';');
+              for (var i = 0; i < cookies.length; i++) {
+                  var cookie = jQuery.trim(cookies[i]);
+                  // Does this cookie string begin with the name we want?
+                  if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                      break;
+                  }
+              }
+          }
+          return cookieValue;
+        }
+        var csrftoken = getCookie('csrftoken');
+        
+        // Function gets the value in a given input box
+        function getData(inputKey) {
+          return $(inputKey).val()
+        }
+        
+        $("#submitNewThymeline").click(function() {
+          console.log("POSTING new Thymeline")
+          var postdata = {
+            'thymelineName': getData("#thymelineNameInput"),
+            'familyName': getData("#familyNameInput"),
+            'csrfmiddlewaretoken': csrftoken
+          };
+          
+          $.ajax({
+            url: "/../../thyme/namethymeline/",
+            method: "POST",
+            headers: { "X-CSRFToken": csrftoken},
+            data: JSON.stringify(postdata),
+            contentType: "application/json",
+            dataType: "json"
+          });
+        });
+      });
+    </script>
   </body>
 </html>

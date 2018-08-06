@@ -15,7 +15,7 @@ class Timeline(models.Model):
   familyName = models.CharField(max_length=30, default='Default Family Name', primary_key=True)
   dishName = models.CharField(max_length=30)
   family = models.ForeignKey(Family, on_delete=models.CASCADE)
-  favorites = models.ManyToManyField(FoodUser)
+#   favorites = models.ManyToManyField(FoodUser)
 
 class Recipe(models.Model):
   recipeName = models.TextField(max_length=30, primary_key=True)

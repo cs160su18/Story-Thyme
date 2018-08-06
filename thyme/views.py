@@ -34,8 +34,29 @@ def searchresults(request, dishName=''):
 def createnew(request):
   return render(request, 'thyme/createnew.html')
 
+def createNewThymeline(request):
+    print("Hello World! from createNewThymeline.")
+    if request.method == "POST":
+      newThymelineData = json.loads(request.body.decode('ASCII'))
+      thymelineName = newThymelineData['thymelineName']
+      familyName = newThymelineData['familyName']
+      family = Family.objects.get(surname=familyName)
+      Timeline(familyName, thymelineName, family).save()
+      return HttpResponse("")
+    else:
+      return render(request, 'thyme/namethymeline.html')
+
 def namethymeline(request):
-  return render(request, 'thyme/namethymeline.html')
+    print("Hello World! from createNewThymeline.")
+    if request.method == "POST":
+      newThymelineData = json.loads(request.body.decode('ASCII'))
+      thymelineName = newThymelineData['thymelineName']
+      familyName = newThymelineData['familyName']
+      family = Family.objects.get(surname=familyName)
+      Timeline(familyName, thymelineName, family).save()
+      return HttpResponse("")
+    else:
+      return render(request, 'thyme/namethymeline.html')
 
 def writerecipe(request):
   if request.method == 'POST':
@@ -73,29 +94,8 @@ def thymeline(request):
 def mycontributedthymelines(request):
   return render(request, 'thyme/mycontributedthymelines.html')
 
-
 def viewrecipe(request):
-  return render(request, 'thyme/viewrecipe.html')
-
-# Process search for Timeline from homepage.html
-def homepageSearchQuery(request):
-    queryDishName = request.GET.get('dishName', None)
-    dishNameExists = Timeline.objects.filter(dishName=queryDishName).exists()
-    if dishNameExists:
-      timelines = Timeline.objects.filter(dishName=queryDishName)
-      obj = {}
-      counter = 0
-      for timeline in timelines:
-          obj["timeline" + str(counter)] = helper(timeline)
-          counter = counter + 1
-      return JsonResponse(obj)
-    else:
-      # Timeline doesn't exist
-      data = {
-        'success': 'timeline_error'
-      }
-      return JsonResponse(data) 
-  
+  return render(request, 'thyme/viewrecipe.html')  
 
 def helper(timeline):
     data = {
