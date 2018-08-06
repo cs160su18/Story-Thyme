@@ -17,6 +17,20 @@ def searchresults(request, dishName=''):
   print("Hello World! From searchresults views.py")
   print("dishName: ", dishName)
   timelines = Timeline.objects.filter(dishName=dishName)
+  obj = createTimelinesDataObject(timelines)
+#   obj = {}
+#   data = {}
+#   obj['data'] = data
+#   counter = 0
+#   for timeline in timelines:
+#     data["timeline" + str(counter)] = helper(timeline)
+#     print(timeline.family.surname)
+#     counter = counter + 1
+#   print(timelines)
+#   print(obj)
+  return render(request, 'thyme/searchresults.html', obj)
+
+def createTimelinesDataObject(timelines):
   obj = {}
   data = {}
   obj['data'] = data
@@ -27,10 +41,45 @@ def searchresults(request, dishName=''):
     counter = counter + 1
   print(timelines)
   print(obj)
-  return render(request, 'thyme/searchresults.html', obj)
+  return obj
+
+def helper(timeline):
+    data = {
+      'success': 'true',
+      'surname': timeline.family.surname
+    }
+    return data
+
+
+def showTimelinesDataObject(timelines):
+  obj = {}
+  data = {}
+  obj['data'] = data
+  counter = 0
+  for timeline in timelines:
+    data["timeline" + str(counter)] = helperShowThymeline(timeline)
+    print(timeline.dishName)
+    counter = counter + 1
+  print(timelines)
+  print(obj)
+  return obj
+
+def helperShowThymeline(timeline):
+    data = {
+      'success': 'true',
+      'dishName': timeline.dishName
+    }
+    return data
 
 def selectthymeline(request):
-  return render(request, 'thyme/selectthymeline.html')
+  currentUser = request.user
+  foodUser = FoodUser.objects.get(user=currentUser)
+  foodUserFamilyName = foodUser.family.surname
+  timelines = Timeline.objects.filter(familyName=foodUserFamilyName)
+  print(timelines)
+  obj = showTimelinesDataObject(timelines)
+  print(obj)
+  return render(request, 'thyme/selectthymeline.html', obj)
 
 def createNewThymeline(request):
     print("Hello World! from createNewThymeline.")
@@ -173,17 +222,3 @@ def addtoexisting(request, familyName=''):
     data["timeline" + str(counter)] = helperDish(timeline)
     counter = counter + 1
   return render(request, 'thyme/createnew.html', obj)
-  
-def helper(timeline):
-    data = {
-      'success': 'true',
-      'surname': timeline.family.surname
-    }
-    return data
-
-def helperDish(timeline):
-    data = {
-      'success': 'true',
-      'surname': timeline.dishName
-    }
-    return data
