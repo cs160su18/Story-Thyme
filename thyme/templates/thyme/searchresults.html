@@ -43,14 +43,16 @@
       </div>
     </div>
     <script>
-//       function HelloWorld() {
-//         console.log('{{data}}');
-//         console.log('{{data.values}}');
-//       };
-//       HelloWorld();
+      
+/*      
+    function HelloWorld() {
+        console.log('{{data}}');
+        console.log('{{data.values}}');
+      };
+      HelloWorld(); 
+*/
       
       $(document).ready(function() {
-//         var queryTimeline = '{{timeline0}}';
         {% for timeline in data.values %}
           console.log("{{timeline.display_text}}");
           $("#timelines").append("<p>" + "{{timeline.display_text}}" + "</p>");

@@ -12,27 +12,21 @@
 		<link rel="stylesheet" type="text/css" href="{% static '/thyme/thymeline.css' %}" />
     <link href="https://fonts.googleapis.com/css?family=Amaranth:700" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-	
 	  <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Fira+Sans:400,400italic' rel='stylesheet' type='text/css'>
-
-
-
 
 		<script src="{% static '/thyme/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
 		<script src="{% static '/thyme/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
     
   <style>
-    * {
-    box-sizing: border-box;
-}
+  * {
+      box-sizing: border-box;
+    }
 
 body {
     background-color: rgb(231, 247, 246);
-  font-family: raleway, sans-serif;
-  font-style: normal;
-  font-weight: 300;
+    font-family: raleway, sans-serif;
+    font-style: normal;
+    font-weight: 300;
 }
 
 /* The actual timeline (the vertical ruler) */
@@ -158,74 +152,69 @@ body {
   .right {
     left: 0%;
   }
-}</style>
-	</head>
-<body>
-<div class="container-fluid">
-  <div class="row top">
-    <div class="col-6">
-      <button type="button" class="btn btn-default"><i class="material-icons">arrow_back</i></button>
-    </div>
-    <div class="col-6" align="right">
-      <button type="button" class="btn btn-default">View recipe</button>
-    </div>
+}
+  </style>
+  </head>
   
+  <body>
+    <div class="container-fluid">
+      <div class="row top">
+        <div class="col-6">
+          <button type="button" class="btn btn-default"><i class="material-icons">arrow_back</i></button>
+        </div>
+        <div class="col-6" align="right">
+          <button type="button" class="btn btn-default">View recipe</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <div class="col-12 text-center">
+            <h3>Smith Family Apple Pie </h3>
+          </div>
+        </div>
+      </div>
     </div>
-  <div class="row">
-    <div class="col-xs-12 text-center">
-    <div class="col-12 text-center">
-     <h3>Smith Family Apple Pie </h3>
-  </div>
 
-    </div></div>
-    
+    <!-- Timeline -->
 
-  </div>
-  
-  <!-- Timeline -->
-  
- 
-
-
-<div class="timeline">
-  <div class="container left">
-    <div class="content">
-      <h2>1931</h2>
-      <p>The first recorded recipe for apple pie was written in 1381 in England, and called for figs, raisins, pears, and saffron in addition to apples. Early apple pie recipes were a lot different from what we know today, as they rarely called for sugar, an expensive and hard-to-get item at the time.</p>
+    <div class="timeline">
+      <div class="container left">
+        <div class="content">
+          <h2>1931</h2>
+          <p>The first recorded recipe for apple pie was written in 1381 in England, and called for figs, raisins, pears, and saffron in addition to apples. Early apple pie recipes were a lot different from what we know today, as they rarely called for sugar, an expensive and hard-to-get item at the time.</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>1956</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>2015</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>2012</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>2011</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>2007</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="container right">
-    <div class="content">
-      <h2>1956</h2>
-      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-    </div>
-  </div>
-  <div class="container left">
-    <div class="content">
-      <h2>2015</h2>
-      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-    </div>
-  </div>
-  <div class="container right">
-    <div class="content">
-      <h2>2012</h2>
-      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-    </div>
-  </div>
-  <div class="container left">
-    <div class="content">
-      <h2>2011</h2>
-      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-    </div>
-  </div>
-  <div class="container right">
-    <div class="content">
-      <h2>2007</h2>
-      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-    </div>
-  </div>
-</div>
-
-</body>
+  </body>
 </html>
 
