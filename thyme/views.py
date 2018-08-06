@@ -68,9 +68,10 @@ def addrecipe(request):
       story = form.cleaned_data['story']
     
       # create a new Timepoint and save it to Database
-      # TO DO: fill in the null fields e.g. the current user
       # TO DO: fill in the recipe (from next page) and timeline (from previous page)
-      timepoint = Timepoint(date=date, story=story)
+      currentUser = request.user
+      foodUser = FoodUser.objects.filter(user=currentUser)[0]
+      timepoint = Timepoint(date=date, story=story, author=foodUser)
       timepoint.save()
   else:
     print("TIMEPOINT FORM IS NOT VALID!!!")
