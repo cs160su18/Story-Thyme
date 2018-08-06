@@ -2,10 +2,10 @@
   margin-bottom: 20px;
 }
 
-/* .btn {
-  background-color: #009F8A;
-} */
-
+ .btn {
+  background-color: "white";
+  color: rgb(0, 172, 148);
+} 
 h4 {
   text-transform: uppercase;
   padding: 20px;
@@ -26,6 +26,7 @@ body {
   font-family: 'Amaranth', sans-serif;
   font-style: normal;
   font-weight: 700;
+  background-color: rgb(231, 247, 246)
 }
 small {
   font-family: 'Amaranth', sans-serif;
@@ -38,4 +39,8 @@ h5 {
   font-family: 'Amaranth', sans-serif;
   font-weight: 700;
   color: rgb(0, 172, 148); 
+}
+
+.material-icons {
+   color: rgb(0, 172, 148); 
 }

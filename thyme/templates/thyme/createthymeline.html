@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title></title>
+
+		<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{% static '/thyme/vendor/bootstrap/css/bootstrap.css' %}" />
+
+		<script src="{% static '/thyme/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static '/thyme/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'thyme/namethymeline.css'%}">
+    <link href="https://fonts.googleapis.com/css?family=Amaranth:700" rel="stylesheet">
+
+	</head>
+  
+	<body>
+    <div class="container-fluid">
+  <div class="row" style="background-color: rgb(245, 245, 245)">
+    <div class="col-3">
+      <a href="/thyme/homepage" class="btn btn-default btn-sm">
+          <i class="material-icons">arrow_back</i>
+        </a>
+    </div>
+      </div>
+  <div class="row">
+    <div class="col-12 text-center" align="center">
+      <h1>Create Recipe Thymeline</h1>
+    </div> 
+    </div>
+<div class="row" align="center">
+    <div class="col-12">
+      
+      
+      <form method="post" novalidate>
+        {% csrf_token %}
+         <table>
+          {{ form }}
+         </table>
+          <button type="submit"> <a href="/thyme/addtimepoint"> Add a story and recipe segment to your new thymeline! </a> </button>
+      </form>
+    
+      
+    </div>
+  </div>
+    
+</div>
+      
+  </body>
+</html>

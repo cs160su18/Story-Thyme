@@ -5,6 +5,11 @@
 
  .btn {
   background-color: "white";
+  color: rgb(0, 172, 148);
+} 
+
+.material-icons {
+   color: rgb(0, 172, 148); 
 } 
 
 h4 {
@@ -33,3 +38,4 @@ body {
   font-weight: 700;
   font-size: 20px;
 }
+
