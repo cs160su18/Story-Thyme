@@ -31,11 +31,11 @@ def searchresults(request, dishName=''):
   print(obj)
   return render(request, 'thyme/searchresults.html', obj)
 
-def createnew(request):
-  return render(request, 'thyme/createnew.html')
+def selectthymeline(request):
+  return render(request, 'thyme/selectthymeline.html')
 
-def namethymeline(request):
-  return render(request, 'thyme/namethymeline.html')
+def createthymeline(request):
+  return render(request, 'thyme/createthymeline.html')
 
 def writerecipe(request):
   """ Save a new Recipe and render the Write Recipe view"""  

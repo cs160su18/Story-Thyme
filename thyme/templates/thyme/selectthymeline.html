@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title></title>
+
+		<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{% static '/thyme/vendor/bootstrap/css/bootstrap.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static '/thyme/createnew.css' %}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
+    <link href="https://fonts.googleapis.com/css?family=Amaranth:700" rel="stylesheet">
+
+		<script src="{% static '/thyme/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static '/thyme/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
+	</head>
+	<body>
+  <div class="container-fluid">
+  <div class="row top">
+    <div class="col-12">
+      <a href="/thyme/homepage" class="btn btn-default"><i class="material-icons">arrow_back</i></a>
+    </div>
+  </div>
+    <div class="row">
+    </div>
+  <div class="row" align="center">
+    <div class="col-12 text-center">
+      <div class="panel panel-default">
+        <a href="/thyme/createthymeline" class="btn btn-light btn-block"> 
+          <h2>Create New + </h2> 
+        </a>
+        
+      
+    </div>
+  </div>
+    </div>
+  <div class="row add" align="center">
+    Add to existing:
+    </div>
+      <div class="row" align="center">
+    <div class="col-12 text-center"><div class="panel panel-default"><a href="/thyme/addtimepoint" class="btn btn-light btn-block"><h3>  *User's family thymelines </h3> </a>
+      
+    </div>
+  </div>
+    </div>
+    
+  
+    </div>
+</body>
+</html>
+

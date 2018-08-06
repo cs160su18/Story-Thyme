@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title></title>
+
+		<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{% static '/thyme/vendor/bootstrap/css/bootstrap.css' %}" />
+
+		<script src="{% static '/thyme/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static '/thyme/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'thyme/namethymeline.css'%}">
+    <link href="https://fonts.googleapis.com/css?family=Amaranth:700" rel="stylesheet">
+
+	</head>
+  
+	<body>
+    <div class="container-fluid">
+  <div class="row" style="background-color: rgb(245, 245, 245)">
+    <div class="col-3">
+      <button type="button" class="btn btn-default btn-sm">
+          <i class="material-icons">arrow_back</i>
+        </button>
+    </div>
+      </div>
+  <div class="row">
+    <div class="col-12 text-center" align="center">
+      <h1>Create Recipe Thymeline</h1>
+    </div> 
+    </div>
+<div class="row" align="center">
+    <div class="col-12">
+      <form>
+ Enter thymeline name:<br>
+  <input type="text" name="thymelineName"><br>
+</form>
+    </div>
+  </div>
+     <div class="row" align="right">
+    <div class="col-12" align="right">
+      <a href="/thyme/addtimepoint" class="btn btn-default btn-sm">
+          Add a story and recipe segment to your new thymeline!
+        </a>
+    </div>
+    </div>
+</div>
+      
+  </body>
+</html>
