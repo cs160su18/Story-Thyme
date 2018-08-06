@@ -33,19 +33,20 @@
     </div>
 <div class="row" align="center">
     <div class="col-12">
-      <form>
- Enter thymeline name:<br>
-  <input type="text" name="thymelineName"><br>
-</form>
+      
+      
+      <form method="post" novalidate>
+        {% csrf_token %}
+         <table>
+          {{ form }}
+         </table>
+          <button type="submit"> <a href="/thyme/addtimepoint"> Add a story and recipe segment to your new thymeline! </a> </button>
+      </form>
+    
+      
     </div>
   </div>
-     <div class="row" align="right">
-    <div class="col-12" align="right">
-      <a href="/thyme/addtimepoint" class="btn btn-default btn-sm">
-          Add a story and recipe segment to your new thymeline!
-        </a>
-    </div>
-    </div>
+    
 </div>
       
   </body>

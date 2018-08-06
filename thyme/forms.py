@@ -41,4 +41,14 @@ class TimepointForm(forms.Form):
         story = cleaned_data.get('story')
         if not date or not story:
             raise forms.ValidationError('Please enter text in all required fields!')
+            
+class TimelineForm(forms.Form):
+    dish_name = forms.CharField(max_length=30)
+    
+    def clean(self):
+        cleaned_data = super(TimelineForm, self).clean()       
+        dish_name = cleaned_data.get('dish_name')
+        if not dish_name:
+            raise forms.ValidationError('Please enter text in all required fields!')
+            
       

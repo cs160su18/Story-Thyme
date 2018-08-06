@@ -28,18 +28,14 @@
         </div>
         
         <form method="post" novalidate>
-        {% csrf_token %}
-         <table>
-          {{ form }}
-         </table>
-          
-          <button type="submit">
-            <a href="/thyme/writerecipe" class="btn btn-default btn-sm">
-              Next
-             </a> 
+          {% csrf_token %}
+           <table>
+            {{ form }}
+           </table>          
+            <button type="submit">
+              <a href="/thyme/writerecipe"> Next </a> 
             </button>
-
-      </form>
+        </form>
 
 
 
