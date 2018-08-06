@@ -4,7 +4,6 @@
 }
 
 
-
 h4 {
   padding: 20px;
   font-family: 'Amaranth', sans-serif;
@@ -12,14 +11,15 @@ h4 {
   font-weight: 300;
   font-size: 100px;
   color: rgb(0, 104, 55); 
-  
 }
+
 button {
   margin:0px;
   font-family: raleway, sans-serif;
   font-style: normal;
   font-weight: 300;
 }
+
 .btn {
   color: rgb(0, 172, 148); 
   font-family: raleway, sans-serif;
@@ -47,7 +47,6 @@ body {
   font-family: raleway, sans-serif;
   font-style: normal;
   font-weight: 300;
- 
 }
 small {
   font-family: 'Amaranth', sans-serif;

@@ -22,29 +22,25 @@
           Cancel
         </a>
     </div>
-    <div class="col-3">
+    <div class="col-9" style="text-align:right">
       <a href="/thyme/writerecipe"  class="btn btn-default btn-sm">
           Next
         </a>
     </div>
-    <div class="col-9 text-right">
-     
-    </div>
         </div>
+    <div class="row">
+      <br>
+    </div>
         
         <form method="post" novalidate>
           {% csrf_token %}
            <table>
             {{ form }}
-           </table>             
-          <button type="submit">Save</button>
+           </table>  <br>           
+          <button type="submit" class="save" style="background-color: white">Save</button>
         </form>
         
     </div>
-
-  
-  
- 
   </body>
 </html>
 
