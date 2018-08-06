@@ -4,7 +4,7 @@ from thyme.models import *
 from django.core.serializers import serialize
 import json
 from django.http import JsonResponse
-from .forms import RecipeForm, TimepointForm
+from .forms import RecipeForm, TimepointForm, TimelineForm
 
 def index(request):
   return render(request, 'thyme/index.html')
@@ -33,13 +33,30 @@ def selectthymeline(request):
   return render(request, 'thyme/selectthymeline.html')
 
 def createthymeline(request):
-  return render(request, 'thyme/createthymeline.html')
+  if request.method == 'POST':
+    print("create timeline post request")
+    form = TimelineForm(request.POST)
+    if form.is_valid():
+      print("timeline form is valid")
+      dish_name = form.cleaned_data['dish_name']
+      foodUser = FoodUser.objects.filter(user=request.user)[0] 
+      print("user is", foodUser)
+      family = foodUser.family
+      print("family is", family)
+      timeline = Timeline(familyName=family.surname, dishName=dish_name, family=family)
+      print("timeline is", timeline)
+      timeline.save()
+  else:
+    form = TimelineForm()
+        
+  return render(request, 'thyme/createthymeline.html', {'form': form})
 
 def writerecipe(request):
   """ Save a new Recipe and render the Write Recipe view"""  
   if request.method == 'POST':
     form = RecipeForm(request.POST)
     if form.is_valid():
+      print("recipe form is valid")
       recipe_name = form.cleaned_data['recipe_name']
       ingredients = form.cleaned_data['ingredients']
       directions = form.cleaned_data['directions']
@@ -70,6 +87,7 @@ def writerecipe(request):
 def addtimepoint(request): 
   """ Save a new Timepoint and render the Add Timepoint view"""
   if request.method == 'POST':
+    print("timepoint form is valid")
     form = TimepointForm(request.POST)
     if form.is_valid():
       date = form.cleaned_data['date']

@@ -12,7 +12,7 @@ class FoodUser(models.Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE)
   
   def __str__(self):
-    return user.username
+    return self.user.username
 
 class Timeline(models.Model):
   familyName = models.CharField(max_length=30, default='Default Family Name', primary_key=True)
@@ -20,7 +20,7 @@ class Timeline(models.Model):
   family = models.ForeignKey(Family, on_delete=models.CASCADE)
 #   favorites = models.ManyToManyField(FoodUser)
   def __str__(self):
-    return  self.family + ' ' + self.dishName + ' Timeline'
+    return  self.familyName + ' ' + self.dishName + ' Timeline'
 
 class Recipe(models.Model):
   recipeName = models.TextField(max_length=30, primary_key=True)
