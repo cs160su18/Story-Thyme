@@ -1,5 +1,6 @@
 .row {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 
@@ -9,6 +10,8 @@ h4 {
   font-family: 'Amaranth', sans-serif;
   font-style: normal;
   font-weight: 300;
+  font-size: 100px;
+  color: rgb(0, 104, 55); 
   
 }
 button {
@@ -23,10 +26,12 @@ button {
   font-style: normal;
   font-weight: 300;
   background-color: "white";
+  font-size: 80px;
 }
 
 .material-icons {
    color: rgb(0, 172, 148); 
+   font-size: 48px;
 }
 
 
@@ -34,7 +39,7 @@ button {
   margin: 20px;
 }
 .top {
-  padding: 3px;
+  margin-top:0px;
   background-color: rgb(245, 245, 245);
 }
 body {
@@ -42,6 +47,7 @@ body {
   font-family: raleway, sans-serif;
   font-style: normal;
   font-weight: 300;
+ 
 }
 small {
   font-family: 'Amaranth', sans-serif;
