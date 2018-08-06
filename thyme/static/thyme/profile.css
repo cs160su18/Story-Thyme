@@ -2,9 +2,7 @@
   margin-bottom: 20px;
 }
 
-/* .btn {
-  background-color: #009F8A;
-} */
+
 
 h4 {
   padding: 20px;
@@ -20,10 +18,11 @@ button {
   font-weight: 300;
 }
 .btn {
-    color: rgb(0, 172, 148); 
+  color: rgb(0, 172, 148); 
   font-family: raleway, sans-serif;
   font-style: normal;
   font-weight: 300;
+  background-color: "white";
 }
 
 .material-icons {

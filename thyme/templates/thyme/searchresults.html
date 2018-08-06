@@ -49,7 +49,7 @@
       };
       HelloWorld();
       $(document).ready(function() {
-        var queryDishName = '{{timeline0}}';
+        var queryTimeline = '{{timeline0}}';
         {% for timeline in data.values %}
           console.log("{{timeline.surname}}");
           $("#surname").append("<p>" + "{{timeline.surname}}" + "</p>");

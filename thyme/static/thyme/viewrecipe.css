@@ -64,9 +64,10 @@ font-style: normal;
 font-weight: 700;
 }
 
-.btn {
-    color: rgb(0, 172, 148); 
-}
+ .btn {
+  background-color: "white";
+  color: rgb(0, 172, 148);
+} 
 
 .material-icons {
    color: rgb(0, 172, 148); 

@@ -17,8 +17,6 @@ def searchresults(request, dishName=''):
   print("Hello World! From searchresults views.py")
   print("dishName: ", dishName)
   timelines = Timeline.objects.filter(dishName=dishName)
-  print("timelines: ", Timeline.objects)
-  print("timelines.filter: ", timelines)
   obj = {}
   data = {}
   obj['data'] = data
@@ -95,14 +93,31 @@ def homepageSearchQuery(request):
         'success': 'timeline_error'
       }
       return JsonResponse(data) 
+    
+def addtoexisting(request, familyName=''):
+  user = Timeline.objects.filter(FoodUser = user.username)
+  print(user.username)
+  timelines = Timeline.objects.filter(familyName=user.Family)
+  obj = {}
+  data = {}
+  obj['data'] = data
+  counter = 0
+  for timeline in timelines:
+    data["timeline" + str(counter)] = helperDish(timeline)
+    counter = counter + 1
+  return render(request, 'thyme/createnew.html', obj)
   
 
 def helper(timeline):
     data = {
       'success': 'true',
-#       'surname': timeline.family.surname
-      'surname': timeline.familyName
-
+      'surname': timeline.family.surname
     }
     return data
 
+def helperDish(timeline):
+    data = {
+      'success': 'true',
+      'surname': timeline.dishName
+    }
+    return data
