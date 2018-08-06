@@ -15,7 +15,8 @@ class FoodUser(models.Model):
     return self.user.username
 
 class Timeline(models.Model):
-  familyName = models.CharField(max_length=30, default='Default Family Name', primary_key=True)
+  models.AutoField(primary_key=True)
+  familyName = models.CharField(max_length=30, default='Default Family Name')
   dishName = models.CharField(max_length=30)
   family = models.ForeignKey(Family, on_delete=models.CASCADE)
 #   favorites = models.ManyToManyField(FoodUser)

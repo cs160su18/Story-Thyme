@@ -4,12 +4,10 @@
 
 <html lang="en">
 	<head>
-		<title></title>
-
+		<title>Search Results</title>
 		<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="{% static '/thyme/vendor/bootstrap/css/bootstrap.css' %}" />
 		<link rel="stylesheet" type="text/css" href="{% static '/thyme/searchresults.css' %}" />
-
 		<script src="{% static '/thyme/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
 		<script src="{% static '/thyme/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
@@ -43,15 +41,8 @@
       </div>
     </div>
     <script>
-      function HelloWorld() {
-        console.log('{{data}}');
-        console.log('{{data.values}}');
-      };
-      HelloWorld();
       $(document).ready(function() {
-        var queryTimeline = '{{timeline0}}';
         {% for timeline in data.values %}
-          console.log("{{timeline.surname}}");
           $("#surname").append("<p>" + "{{timeline.surname}}" + "</p>");
         {% endfor %}
       });
