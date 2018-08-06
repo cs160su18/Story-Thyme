@@ -5,10 +5,30 @@
  .btn {
   background-color: "white";
   color: rgb(0, 172, 148);
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  color: rgb(0, 172, 148); 
+  font-size: 60px;
 } 
+
+a {
+  background-color: "white";
+  color: rgb(0, 172, 148);
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  color: rgb(0, 104, 55);
+  font-size: 60px;
+  
+}
+
 h4 {
   text-transform: uppercase;
   padding: 20px;
+  color: rgb(0, 104, 55); 
+  font-size: 200px;
+  
   
 }
 button {
@@ -27,6 +47,20 @@ body {
   font-style: normal;
   font-weight: 700;
   background-color: rgb(231, 247, 246)
+  color: rgb(0, 104, 55); 
+}
+
+p {
+  font-family: 'Amaranth', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  background-color: rgb(231, 247, 246)
+  color: rgb(0, 104, 55); 
+
+}
+
+h4 {
+  font-size: 50px;
 }
 small {
   font-family: 'Amaranth', sans-serif;

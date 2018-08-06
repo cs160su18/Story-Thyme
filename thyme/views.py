@@ -180,9 +180,14 @@ def profile(request):
   return render(request, 'thyme/profile.html')
 
 def family(request):
+  currentUser = request.user
+  foodUser = FoodUser.objects.get(user=currentUser)
+  foodUserFamilyName = foodUser.family.surname
+  print(foodUserFamilyName)
   return render(request, 'thyme/family.html')
 
 def thymeline(request):
+  
   return render(request, 'thyme/thymeline.html')
 
 def mycontributedthymelines(request):
