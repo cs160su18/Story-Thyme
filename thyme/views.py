@@ -201,7 +201,7 @@ def thymeline(request, thymelineId):
   print("from thymeline in views.py")
   # to do: offer protection if none exists
   timeline = Timeline.objects.filter(id=thymelineId)[0] 
-  timepoints = Timepoint.objects.filter(timeline=timeline)
+  timepoints = Timepoint.objects.filter(timeline=timeline).order_by('date')
   print("timepoints for timeline with id", thymelineId, "are ", timepoints)
 #   obj['data'] = data
 
