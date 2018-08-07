@@ -17,43 +17,25 @@ def homepage(request):
   print("Hello World! From homepage views.py")
   return render(request, 'thyme/homepage.html')
 
-def homepageSearchQuery(request):
-    """Process search for Timeline from homepage.html"""
     
-    queryDishName = request.GET.get('dishName', None)
-    dishNameExists = Timeline.objects.filter(dishName=queryDishName).exists()
-    if dishNameExists:
-      timelines = Timeline.objects.filter(dishName=queryDishName)
-      obj = {}
-      counter = 0
-      for timeline in timelines:
-          obj["timeline" + str(counter)] = helper(timeline)
-          counter = counter + 1
-      return JsonResponse(obj)
-    else:
-      # Timeline doesn't exist
-      data = {
-        'success': 'timeline_error'
-      }
-      return JsonResponse(data) 
-
+# BEGIN - SEARCHING THYMELINES FROM HOMEPAGE 
 def searchresults(request, dishName=''):
   """Render searchresults.html and display relevant results from queried dishName"""
-  
   print("Hello World! From searchresults views.py")
   print("dishName: ", dishName)
   timelines = Timeline.objects.filter(dishName=dishName)
+  obj = createSearchTimelinesDataObject(timelines)
+  return render(request, 'thyme/searchresults.html', obj)
+
+def createSearchTimelinesDataObject(timelines):
   obj = {}
   data = {}
   obj['data'] = data
   counter = 0
   for timeline in timelines:
     data["timeline" + str(counter)] = searchResultsHelper(timeline)
-    print(timeline.family.surname)
     counter = counter + 1
-  print(timelines)
-  print(obj)
-  return render(request, 'thyme/searchresults.html', obj)
+  return obj
   
 def searchResultsHelper(timeline):
     data = {
@@ -62,14 +44,38 @@ def searchResultsHelper(timeline):
       'display_text': str(timeline)
     }
     return data
+# END - SEARCHING THYMELINES FROM HOMEPAGE 
   
- ## MARK: - Creating Timelines, Timepoints, and Recipes
-      
+# BEGIN - SELECT THYMELINE CODE
 def selectthymeline(request):
-  """Render selectthymeline.html, which shows either Create New+ or Select Existing Timeline as options."""
-  
-  return render(request, 'thyme/selectthymeline.html')
-   
+  currentUser = request.user
+  foodUser = FoodUser.objects.get(user=currentUser)
+  foodUserFamilyName = foodUser.family.surname
+  timelines = Timeline.objects.filter(familyName=foodUserFamilyName)
+  obj = createSelectTimelinesDataObject(timelines)
+  return render(request, 'thyme/selectthymeline.html', obj)
+
+def createSelectTimelinesDataObject(timelines):
+  obj = {}
+  data = {}
+  obj['data'] = data
+  counter = 0
+  for timeline in timelines:
+    data["timeline" + str(counter)] = selectThymelineHelper(timeline)
+    counter = counter + 1
+  return obj
+
+def selectThymelineHelper(timeline):
+    data = {
+      'success': 'true',
+      'dishName': timeline.dishName,
+      'display_text': str(timeline)
+    }
+    return data
+# END - SELECT THYMELINE CODE
+
+## MARK: - Creating Timelines, Timepoints, and Recipes
+
 def addtoexisting(request, familyName=''):
   user = Timeline.objects.filter(FoodUser = user.username)
   print(user.username)
@@ -156,9 +162,36 @@ def writerecipe(request):
     form = RecipeForm()
   return render(request, 'thyme/writerecipe.html', {'form': form})
 
+def addtimepoint(request): 
+  """ Save a new Timepoint and render the Add Timepoint view"""
+  print("add timepoint being called")
+  if request.method == 'POST':
+    print("timepoint form is valid")
+    form = TimepointForm(request.POST)
+    if form.is_valid():
+      date = form.cleaned_data['date']
+      story = form.cleaned_data['story']
+    
+      # create a new Timepoint and save it to Database
+      foodUser = FoodUser.objects.filter(user=request.user)[0]
+      timepoint = Timepoint(date=date, story=story, author=foodUser)  
+      # TO DO: fill in the Timeline field of Timepoint with info from previous page     
+      timepoint.save()
+  else:
+    form = TimepointForm()
+  return render(request, 'thyme/addtimepoint.html', {'form': form})
+
+def profile(request):
+  return render(request, 'thyme/profile.html')
+
+def family(request):
+  return render(request, 'thyme/family.html')
+
 ## MARK: - Viewing Timelines and Recipes
 
+
 def thymeline(request):
+  
   return render(request, 'thyme/thymeline.html')
 
 def viewrecipe(request):
@@ -169,8 +202,7 @@ def viewrecipe(request):
 def profile(request):
   return render(request, 'thyme/profile.html')
 
-def family(request):
-  return render(request, 'thyme/family.html')
+
 
 def mycontributedthymelines(request):
   return render(request, 'thyme/mycontributedthymelines.html')
