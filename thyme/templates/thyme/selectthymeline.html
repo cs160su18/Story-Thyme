@@ -42,14 +42,16 @@
       </div>
 
     <script>
-      var thymelinePanelTemplateStart =  "<div class='row' align='center'> <div class='col-12 text-center'> <div class='panel panel-default' id='thymelines'> <a href='/thyme/addtimepoint' class='btn btn-light btn-block'> <h3>"
-      var thymelinePanelTemplateEnd = "</h3> </a> </div> </div> </div>"
+      var thymelinePanelTemplate1 = "<div class='row' align='center'> <div class='col-12 text-center'> <div class='panel panel-default' id='thymelines'> <a href='/thyme/addtimepoint/";
+      var thymelinePanelTemplate2 = " class='btn btn-light btn-block'> <h3>";
+      var thymelinePanelTemplate3 = "</h3> </a> </div> </div> </div>";
       $(document).ready(function() {
         console.log("Hello World!");
         console.log("{{data.values}}");
         {% for timeline in data.values %}
+//           var thymelinePanelTemplate2 = "{{timeline.dishName}}";
           console.log("{{timeline.dishName}}");
-          $("#thymelines").append(thymelinePanelTemplateStart + "{{timeline.dishName}}" + thymelinePanelTemplateEnd);
+          $("#thymelines").append(thymelinePanelTemplate1 + "{{timeline.dishName}}/'" + thymelinePanelTemplate2 + "{{timeline.dishName}}" + thymelinePanelTemplate3);
         {% endfor %}
       });
     </script>
