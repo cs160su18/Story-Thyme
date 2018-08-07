@@ -55,7 +55,7 @@
            var hrefTag = "<a href='/thyme/viewrecipe/{{timepoint.id}}' id='toRecipe'> <h2>{{timepoint.date}}</h2></a>"
            console.log("timepoint");
            console.log("{{timepoint}}");
-          $("#timeline").append(divTag + contentDivTag + hrefTag + "<p>{{timepoint.story}}</p><p>{{timepoint.id}}</p></div></div>");                  
+          $("#timeline").append(divTag + contentDivTag + hrefTag + "<p>{{timepoint.story}}</p></div></div>");                  
         {% endfor %}
 
   });
