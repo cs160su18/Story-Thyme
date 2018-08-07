@@ -46,25 +46,18 @@
   
   <script>
     
-   var divTag = "<div class='container right'>"
+   var divTag = "<div class='container right' id='toRecipeContainer'>"
    var contentDivTag = "<div class='content'>"
 
    $(document).ready(function() {
         console.log("script");
         {% for timepoint in timepoints %}
-           var hrefTag = "<a href='' id='toRecipe'> <h2>{{timepoint.date}}</h2></a>"
-           var hiddenInput = "<input type='hidden' id='primaryKey' name='input' value='{{timepoint.id}}'>"
+           var hrefTag = "<a href='/thyme/viewrecipe/{{timepoint.id}}' id='toRecipe'> <h2>{{timepoint.date}}</h2></a>"
            console.log("timepoint");
            console.log("{{timepoint}}");
-          $("#timeline").append(divTag + contentDivTag + hiddenInput + hrefTag + "<p>{{timepoint.story}}</p><p>{{timepoint.id}}</p></div></div>");                  
+          $("#timeline").append(divTag + contentDivTag + hrefTag + "<p>{{timepoint.story}}</p><p>{{timepoint.id}}</p></div></div>");                  
         {% endfor %}
-        
-        $("#toRecipe").click(function() {
-            console.log("CLICKED A TIMEPOINT");
-            console.log("timepoint ID: ", $("#primaryKey").val());
-            // Pass timeline's primary key to thymeline page
-            $("#toRecipe").attr('href', "../../viewrecipe/" + $("#primaryKey").val());
-          });
+
   });
   </script>
 </html>

@@ -59,20 +59,9 @@
       $(document).ready(function() {
         {% for timeline in data.values %}
           console.log("{{timeline.display_text}}");
-           var hiddenInput = "<input type='hidden' id='primaryKey' name='input' value='{{timeline.idString}}'>"
-           // Create clickable thymelines for each thymeline
-           $("#timelines").append(panelTag + hiddenInput + hrefTag + "{{timeline.display_text}}" + "</a></div>"); 
-                 
+           var hrefTag = "<a id='href' href='/thyme/thymeline/{{timeline.idString}}' class='btn-med btn-light btn-block'>"
+           $("#timelines").append(panelTag + hrefTag + "{{timeline.display_text}}" + "</a></div>");                  
         {% endfor %}
-        
-          // Detect click on one thymeline
-          $("#thymelines").click(function() {
-            console.log("CLICKED A TIMELINE");
-            console.log("input: ", $("#primaryKey").val());
-            // Pass timeline's primary key to thymeline page
-            $("#href").attr('href', "../../thymeline/" + $("#primaryKey").val());
-          });
-        
         
       });
          
