@@ -219,8 +219,12 @@ def thymeline(request, thymelineId):
 
  
 
-def viewrecipe(request):
-  return render(request, 'thyme/viewrecipe.html')  
+def viewrecipe(request,timepointId):
+  timepoint = Timepoint.objects.filter(id=timepointId)[0]      
+  recipe = timepoint.recipe
+  data = {}
+  data['recipe'] = recipe
+  return render(request, 'thyme/viewrecipe.html', data)  
 
 ## MARK: - User Profile, Family, and Contribution pages
 

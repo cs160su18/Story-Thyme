@@ -43,4 +43,4 @@ class Timepoint(models.Model):
   timeline = models.ForeignKey(Timeline, on_delete=models.CASCADE, blank=True, null=True)
   
   def __str__(self):
-    return "Date: " + str(self.date) + " | Story: " + self.story
+    return "Date: " + str(self.date) + " | Story: " + self.story + " | ID: " + str(self.id)
