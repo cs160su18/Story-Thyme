@@ -115,7 +115,7 @@ def createthymeline(request):
         
   return render(request, 'thyme/createthymeline.html', {'form': form})
 
-def addtimepoint(request): 
+def addtimepoint(request, dishName=''): 
   """Render addtimepoint.html, save a new Timepoint and render the Add Timepoint view"""
   
   if request.method == 'POST':
@@ -123,9 +123,12 @@ def addtimepoint(request):
     if form.is_valid():
       date = form.cleaned_data['date']
       story = form.cleaned_data['story']
-   
-      foodUser = FoodUser.objects.filter(user=request.user)[0]
-      timepoint = Timepoint(date=date, story=story, author=foodUser)  
+      
+      foodUser = FoodUser.objects.get(user=request.user)
+      foodUserFamilyName = foodUser.family.surname;
+      timeline = Timeline.objects.get(familyName=foodUserFamilyName, dishName=dishName);
+      timepoint = Timepoint(date=date, story=story, author=foodUser, timeline=timeline);
+      print(timeline);
       # TO DO: fill in the Timeline field of Timepoint with info from previous page     
       timepoint.save()
   else:
@@ -134,7 +137,8 @@ def addtimepoint(request):
 
 def writerecipe(request):
   """Render writerecipe.html and save a new Recipe"""
-  
+    
+  print("HelloWorld! from writerecipe.")
   if request.method == 'POST':
     form = RecipeForm(request.POST)
     if form.is_valid():
@@ -163,24 +167,24 @@ def writerecipe(request):
     form = RecipeForm()
   return render(request, 'thyme/writerecipe.html', {'form': form})
 
-def addtimepoint(request): 
-  """ Save a new Timepoint and render the Add Timepoint view"""
-  print("add timepoint being called")
-  if request.method == 'POST':
-    print("timepoint form is valid")
-    form = TimepointForm(request.POST)
-    if form.is_valid():
-      date = form.cleaned_data['date']
-      story = form.cleaned_data['story']
+# def addtimepoint(request): 
+#   """ Save a new Timepoint and render the Add Timepoint view"""
+#   print("add timepoint being called")
+#   if request.method == 'POST':
+#     print("timepoint form is valid")
+#     form = TimepointForm(request.POST)
+#     if form.is_valid():
+#       date = form.cleaned_data['date']
+#       story = form.cleaned_data['story']
     
-      # create a new Timepoint and save it to Database
-      foodUser = FoodUser.objects.filter(user=request.user)[0]
-      timepoint = Timepoint(date=date, story=story, author=foodUser)  
-      # TO DO: fill in the Timeline field of Timepoint with info from previous page     
-      timepoint.save()
-  else:
-    form = TimepointForm()
-  return render(request, 'thyme/addtimepoint.html', {'form': form})
+#       # create a new Timepoint and save it to Database
+#       foodUser = FoodUser.objects.filter(user=request.user)[0]
+#       timepoint = Timepoint(date=date, story=story, author=foodUser)  
+#       # TO DO: fill in the Timeline field of Timepoint with info from previous page     
+#       timepoint.save()
+#   else:
+#     form = TimepointForm()
+#   return render(request, 'thyme/addtimepoint.html', {'form': form})
 
 def profile(request):
   return render(request, 'thyme/profile.html')

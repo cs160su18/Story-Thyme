@@ -10,6 +10,7 @@ urlpatterns = [
     path('searchresults/<dishName>/', views.searchresults, name='searchresults'),
     path('searchresults/', views.searchresults, name='searchresults'),
     path('createthymeline/', views.createthymeline, name='createthymeline'),
+    path('addtimepoint/<dishName>/', views.addtimepoint, name='addtimepoint'),
     path('addtimepoint/', views.addtimepoint, name='addtimepoint'),
     path('writerecipe/', views.writerecipe, name='writerecipe'),
     path('profile/', views.profile, name='profile'),
