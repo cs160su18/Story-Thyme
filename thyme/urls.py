@@ -14,7 +14,7 @@ urlpatterns = [
     path('writerecipe/', views.writerecipe, name='writerecipe'),
     path('profile/', views.profile, name='profile'),
     path('mycontributedthymelines/', views.mycontributedthymelines, name='mycontributedthymelines'),
-    path('thymeline/<thymelineName>/', views.thymeline, name='thymeline'),
+    path('thymeline/<thymelineId>/', views.thymeline, name='thymeline'),
     path('family/', views.family, name='family'),
     path('viewrecipe/', views.viewrecipe, name='viewrecipe'),
 ]

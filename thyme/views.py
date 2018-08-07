@@ -191,9 +191,16 @@ def family(request):
 ## MARK: - Viewing Timelines and Recipes
 
 
-def thymeline(request):
-  
-  return render(request, 'thyme/thymeline.html')
+
+
+def thymeline(request, thymelineId):
+  # to do: offer protection if none exists
+  timeline = Timeline.objects.filter(id=thymelineId)[0] 
+  # also extract all timepoints, their dates and stories
+  return render(request, 'thyme/thymeline.html', {'timeline': timeline})
+
+
+ 
 
 def viewrecipe(request):
   return render(request, 'thyme/viewrecipe.html')  
