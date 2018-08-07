@@ -160,7 +160,7 @@ def writerecipe(request):
       foodUser = FoodUser.objects.filter(user=request.user)[0] 
       
       # save recipe to latest time point created by this user
-      latestTimePoint = Timepoint.objects.filter(author=foodUser).order_by('-date')[0]
+      latestTimePoint = Timepoint.objects.filter(author=foodUser).order_by('-id')[0]
       latestTimePoint.recipe = recipe
       latestTimePoint.save() 
   else:
