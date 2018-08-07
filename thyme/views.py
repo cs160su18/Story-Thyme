@@ -41,7 +41,8 @@ def searchResultsHelper(timeline):
     data = {
       'success': 'true',
       'surname': timeline.family.surname,
-      'display_text': str(timeline)
+      'display_text': str(timeline),
+      'idString': str(timeline.id)
     }
     return data
 # END - SEARCHING THYMELINES FROM HOMEPAGE 

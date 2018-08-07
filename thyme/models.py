@@ -15,10 +15,13 @@ class FoodUser(models.Model):
     return self.user.username
 
 class Timeline(models.Model):
-  models.AutoField(primary_key=True)
+  # By default, Django gives each model the following field:
+  # id = models.AutoField(primary_key=True)
+
   familyName = models.CharField(max_length=30, default='Default Family Name')
   dishName = models.CharField(max_length=30)
   family = models.ForeignKey(Family, on_delete=models.CASCADE)
+  
 #   favorites = models.ManyToManyField(FoodUser)
   def __str__(self):
     return  self.familyName + ' ' + self.dishName + ' Timeline'

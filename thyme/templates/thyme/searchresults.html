@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <script>
+   <script>
       
 /*      
     function HelloWorld() {
@@ -51,42 +51,26 @@
       };
       HelloWorld(); 
 */
-
-/*      
-      Pseudocode:
-      1. DONE; Want to make displayed timelines clickable elements 
-      2. Detect click on one of them (so far: clicks detect, but not WHICH one it is)
-      3. Pass that timeline's PK from searchresults>thymeline 
-         via same method as homepage>searchresults
-*/      
+     
+     // Make displayed timelines clickable elements
       var panelTag = "<div class='panel panel-default' id='thymelines'>"
       var hrefTag = "<a id='href' href='' class='btn-med btn-light btn-block'>"
-//             var hrefTag = "<a id='href' href='/thyme/thymeline/' class='btn-med btn-light btn-block'>"
 
       $(document).ready(function() {
         {% for timeline in data.values %}
           console.log("{{timeline.display_text}}");
-           $("#timelines").append(panelTag + hrefTag + "{{timeline.display_text}}" + "</a></div>"); 
-         
-         // may need to change href ID based on a counter
-         // then from that unique one, do something like:
-         
-         /* 
-         
-         $("#thymelines").click(function() {
-            console.log("CLICKED A TIMELINE");
-           // find the timeline.display_text somehow and put that in
-            $("#href").attr('href', "../thymeline/" + $("#href").val());
-          });
-          
-          */
-
+           var hiddenInput = "<input type='hidden' id='primaryKey' name='input' value='{{timeline.idString}}'>"
+           // Create clickable thymelines for each thymeline
+           $("#timelines").append(panelTag + hiddenInput + hrefTag + "{{timeline.display_text}}" + "</a></div>"); 
+                 
         {% endfor %}
         
+          // Detect click on one thymeline
           $("#thymelines").click(function() {
             console.log("CLICKED A TIMELINE");
-           // find the timeline.display_text somehow and put that in
-            $("#href").attr('href', "../thymeline/" + document.getElementById("thymelines").innerHTML);
+            console.log("input: ", $("#primaryKey").val());
+            // Pass timeline's primary key to thymeline page
+            $("#href").attr('href', "../../thymeline/" + $("#primaryKey").val());
           });
         
         
