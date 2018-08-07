@@ -1,6 +1,10 @@
+.material-icons {
+  font-size: 100px;
+}
+
 .row {
-  margin-bottom: 20px;
-  margin-top; 20px;
+  margin-bottom: 40px;
+  margin-top; 40px;
 }
 
 
@@ -17,5 +21,15 @@ h4 {
   color: rgb(0, 172, 148);
 } 
 .top {
-  padding: 3px;
+  padding: 100px;
+  
 }
+
+input {
+    height: 100px;
+}
+
+.form-control{
+  height: 100px;
+}
+

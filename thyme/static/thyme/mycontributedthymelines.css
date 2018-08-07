@@ -5,11 +5,14 @@
  .btn {
   background-color: "white";
   color: rgb(0, 172, 148);
+  font-size: 80px;
 } 
 
 h4 {
   text-transform: uppercase;
   padding: 20px;
+  color: rgb(0, 104, 55); 
+  font-size:100px;
   
 }
 h3 {
@@ -17,6 +20,8 @@ h3 {
   font-family: 'Amaranth', sans-serif;
   font-style: normal;
   font-weight: 300;
+  color: rgb(0, 104, 55); 
+  font-size:100px;
 }
 
 .search {
@@ -31,6 +36,7 @@ body {
   font-style: normal;
   font-weight: 300;
   font-size: 30px;
+  background-color: rgb(231, 247, 246);
 }
 small {
   font-family: raleway, sans-serif;
@@ -41,5 +47,10 @@ small {
 
 .material-icons {
    color: rgb(0, 172, 148); 
+   font-size: 48px;
+}
+
+a {
+  background-color: "white";
 }
 

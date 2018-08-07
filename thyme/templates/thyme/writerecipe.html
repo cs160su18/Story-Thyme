@@ -12,35 +12,29 @@
     <link href="https://fonts.googleapis.com/css?family=Amaranth:700" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
 
-
-
 		<script src="{% static '/thyme/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
 		<script src="{% static '/thyme/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
 	</head>
   
 	<body>
-   
-   
- <div class="container-fluid">
-      <div class="row top">
-        <div class="col-6" align="left">
-          <a href="/thyme/addtimepoint" class="btn btn-defaut\lt"><i class="material-icons">arrow_back</i></a>
+     <div class="container-fluid">
+        <div class="row top">
+          <div class="col-6" align="left">
+            <a href="/thyme/addtimepoint" class="btn btn-defaut\lt"><i class="material-icons">arrow_back</i></a>
+          </div>
+          <div class="col-6" align="right">
+            <button type="button" class="btn btn-default">
+              Cancel
+            </button>
+          </div>
         </div>
-        <div class="col-6" align="right">
-          <button type="button" class="btn btn-default">
-            Cancel
-          </button>
-        </div>
+        <form method="post" novalidate>
+          {% csrf_token %}
+           <table>
+              {{ form }}
+           </table>
+           <button type="submit">Submit</button>
+        </form>
       </div>
-
-      <form method="post" novalidate>
-        {% csrf_token %}
-         <table>
-          {{ form }}
-         </table>
-         <button type="submit">Submit</button>
-      </form>
-
-    </div>
 	</body>
 </html>

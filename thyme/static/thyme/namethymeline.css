@@ -5,10 +5,12 @@
 
 body {
   background-color: rgb(231, 247, 246);
-  font-family:  'Amaranth', sans-serif;
+  font-family: raleway, sans-serif;
   font-style: normal;
   font-weight: 300;
-  color: rgb(0, 104, 55);}
+  color: rgb(0, 104, 55);
+  font-size: 60px;
+}
 
 
 h4 {
@@ -22,20 +24,38 @@ h4 {
 
 h1 {
   font-family:  'Amaranth', sans-serif;
-font-style: normal;
-font-weight: 700;
-color: rgb(0, 104, 55);
+  font-style: normal;
+  font-weight: 700;
+  color: rgb(0, 104, 55);
+  font-size: 100px;
+  
 }
 
 .material-icons {
   color: rgb(0, 172, 148);
+  font-size: 48px;
 }
 
 .btn {
   background-color: "white";
   color: rgb(0, 104, 55);
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  color: rgb(0, 104, 55);
+  font-size: 38px;
 }
 
-.material-icons {
-   color: rgb(0, 172, 148); 
+form {
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  color: rgb(0, 104, 55);
+  font-size: 60px;
 }
+
+a {
+  background-color: "white";
+}
+
+

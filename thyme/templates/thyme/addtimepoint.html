@@ -14,37 +14,36 @@
 		<script src="{% static '/thyme/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
 		<script src="{% static '/thyme/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
 	</head>
+  
   <body>
-      <div class="container-fluid">
-  <div class="row top">
-    <div class="col-3">
-      <a href="/thyme/homepage"  class="btn btn-default btn-sm">
-          Cancel
-        </a>
-    </div>
-    <div class="col-3">
-      <a href="/thyme/writerecipe"  class="btn btn-default btn-sm">
-          Next
-        </a>
-    </div>
-    <div class="col-9 text-right">
-     
-    </div>
-        </div>
-        
-        <form method="post" novalidate>
-          {% csrf_token %}
-           <table>
-            {{ form }}
-           </table>             
-          <button type="submit">Save</button>
-        </form>
-        
-    </div>
 
-  
-  
- 
+    <div class="container-fluid">
+      <div class="row top">
+        <div class="col-3">
+          <a href="/thyme/homepage"  class="btn btn-default btn-sm">
+              Cancel
+          </a>
+        </div>
+        <div class="col-9" style="text-align:right">
+          <a href="/thyme/writerecipe"  class="btn btn-default btn-sm">
+              Next
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <br>
+      </div>
+        
+      <form method="post" novalidate>
+        {% csrf_token %}
+         <table>
+          {{ form }}
+         </table>  
+         <br>           
+        <button type="submit" class="save" style="background-color: white">Save</button>
+      </form>
+
+    </div>
   </body>
 </html>
 

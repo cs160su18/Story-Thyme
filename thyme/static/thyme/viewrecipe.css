@@ -1,44 +1,30 @@
 .row {
- 
-  padding-right: 20px;
-  padding-left: 20px;
-  margin: 20px;
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 .top {
+  margin-top:0px;
   background-color: rgb(245, 245, 245);
 }
 
-body {background-color: "white";
-font-family: raleway, sans-serif;
-font-style: normal;
-font-weight: 300;
-color: rgb(0, 104, 55); 
-}
-
-
-h4 {
-  text-transform: uppercase;
-}
-
-.search {
-  padding-right: 20px;
-  padding-left: 30px;
+body {
+  background-color: rgb(231, 247, 246);
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 300;
 }
 
 .ingredients {
-  background-color: rgb(231, 247, 246);
+  background-color: "white";
 }
 
-.blue {
-   background-color: rgb(231, 247, 246);
-}
 
-h1 {
-font-family: 'Amaranth', sans-serif;
-font-style: italic;
-font-weight: 900;
-font-size: 40px;
+h2 {
+font-family: raleway, sans-serif;
+font-weight: 700;
+font-size: 60px;
+color: rgb(0, 104, 55); 
 }
 
 .white {
@@ -47,28 +33,34 @@ font-size: 40px;
 
 textarea {
   font-family: raleway, sans-serif;
-font-style: normal;
-font-weight: 300;
-font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
 }
 
 form {
   font-family: raleway, sans-serif;
-font-style: normal;
-font-weight: 300;
+  font-style: normal;
+  font-weight: 300;
 }
 
 h4 {
 font-family: raleway, sans-serif;
 font-style: normal;
-font-weight: 700;
+font-size: 40px;
+color: rgb(0, 104, 55); 
 }
 
- .btn {
+.btn {
+  color: rgb(0, 172, 148); 
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 300;
   background-color: "white";
-  color: rgb(0, 172, 148);
+  font-size: 80px;
 } 
 
 .material-icons {
    color: rgb(0, 172, 148); 
+   font-size: 48px;
 }
