@@ -3,7 +3,7 @@
   padding: 20px;
 }
 
- .btn-big{
+ .btn-big {
   background-color: "white";
   color: rgb(0, 172, 148);
   font-size: 100px;
@@ -16,7 +16,7 @@
   background-color: "white";
   color: rgb(0, 172, 148);
   font-size: 60px;
-  height: 200px;
+  height: 100px;
   font-weight: 300;
    
 
@@ -25,15 +25,14 @@
  .btn-small{
   background-color: "white";
   color: rgb(0, 172, 148);
-  font-size: 48px;
-  font-weight: 300;
 
 } 
 
 .material-icons {
    color: rgb(0, 172, 148); 
-   font-size: 20px;
-} 
+   font-size: 48px;
+   margin-left: 20px;
+}   
 
 h4 {
   text-transform: uppercase;
@@ -41,14 +40,19 @@ h4 {
   
 }
 h3 {
-  padding: 10px;
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: rgb(0, 104, 55); 
+  font-size: 50px;
+  
 }
 
 .search {
   margin: 20px;
 }
 .top {
-  padding: 3px;
+  padding: 0px;
   background-color: rgb(245, 245, 245);
 }
 
@@ -58,9 +62,10 @@ body {
   background-color: rgb(231, 247, 246);
   font-family: raleway, sans-serif;
   font-style: normal;
+  color: rgb(0, 172, 148);
+  font-size: 100px;
   font-weight: 700;
-  color: rgb(0, 104, 55); 
-  font-size: 50px;}
+}
 
 
 

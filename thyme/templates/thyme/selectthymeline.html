@@ -18,25 +18,25 @@
 
     <body>
       <div class="container-fluid">
-        <div class="row" style ="background-color: rgb(245, 245, 245)">
+        <div class="row top" style ="background-color: rgb(245, 245, 245)">
           <div class="col-6" align="left" style="background-color: rgb(245, 245, 245)">
             <a href="/thyme/homepage" class="btn-small btn-default"><i class="material-icons" style="font-size:48px">arrow_back</i></a>
           </div>
         </div>
-        <div class="row">
-          <br/>
-      </div>
+ 
         <div class="row" align="center">
           <div class="col-12 text-center">
             <div class="panel panel-default">
-              <a href="/thyme/createthymeline" class="btn-large btn-light btn-block"> 
+              <a href="/thyme/createthymeline" class="btn-med btn-light btn-block"> 
                 Create New +  
               </a>
             </div>
           </div>
         </div>
       <div class="row add" align="center">
-        Add to existing:
+        <h3>
+          Add to existing:
+        </h3>
       </div>
       <div class="row" align="center">
         <div class="col-12 text-center">
@@ -47,18 +47,11 @@
           </div>
         </div>
       </div>
-
-     </div>
-
-<!--       <div class="row">
-        <div class=col-12 id="thymelines">
-          <!-- append timelines here. -->
-        
+      </div>
 
     <script>
       var thymelinePanelTemplateStart =  "<div class='row' align='center'> <div class='col-12 text-center'> <div class='panel panel-default' id='thymelines'> <a href='/thyme/addtimepoint' class='btn btn-light btn-block'> <h3>"
       var thymelinePanelTemplateEnd = "</h3> </a> </div> </div> </div>"
-      
       $(document).ready(function() {
         console.log("Hello World!");
         console.log("{{data.values}}");
