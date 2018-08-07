@@ -194,10 +194,23 @@ def family(request):
 
 
 def thymeline(request, thymelineId):
+  print("from thymeline in views.py")
   # to do: offer protection if none exists
   timeline = Timeline.objects.filter(id=thymelineId)[0] 
+  timepoints = Timepoint.objects.filter(timeline=timeline)
+  print("timepoints for timeline with id", thymelineId, "are ", timepoints)
+#   obj['data'] = data
+
+  data = {}
+  data['timeline'] = str(timeline)
+  data['timepoints'] = timepoints
+#   for timepoint in timepoints:
+#     data[str(timepoint.id)] = timepoint
+    
+  print("data", data)
+  
   # also extract all timepoints, their dates and stories
-  return render(request, 'thyme/thymeline.html', {'timeline': timeline})
+  return render(request, 'thyme/thymeline.html', data)
 
 
  

@@ -35,54 +35,29 @@
         </div>
       </div>
     </div>
+    
+
 
     <!-- Timeline -->
-    
-<!--     Pseudocode:
-    1. keep a counter
-    2. If odd, container left, else, container right
-    3. Content div
-    4. Append date to a header
-    5. Append story to a paragraph tag -->
 
-    <div class="timeline">
-      <div class="container left">
-        <div class="content">
-          <a href="/thyme/viewrecipe"> <h2>1931</h2></a>
-          <p>The first recorded recipe for apple pie was written in 1381 in England, and called for figs, raisins, pears, and saffron in addition to apples. Early apple pie recipes were a lot different from what we know today, as they rarely called for sugar, an expensive and hard-to-get item at the time.</p>
-        </div>
-      </div>
-      <div class="container right">
-        <div class="content">
-          <h2>1956</h2>
-          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-        </div>
-      </div>
-      <div class="container left">
-        <div class="content">
-          <h2>2015</h2>
-          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-        </div>
-      </div>
-      <div class="container right">
-        <div class="content">
-          <h2>2012</h2>
-          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-        </div>
-      </div>
-      <div class="container left">
-        <div class="content">
-          <h2>2011</h2>
-          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-        </div>
-      </div>
-      <div class="container right">
-        <div class="content">
-          <h2>2007</h2>
-          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-        </div>
-      </div>
+    <div class="timeline" id="timeline">
     </div>
   </body>
+  
+  <script>
+    
+   var divTag = "<div class='container right'>"
+   var contentDivTag = "<div class='content'>"
+
+   $(document).ready(function() {
+        console.log("script");
+        {% for timepoint in timepoints %}
+           var hrefTag = "<a href='/thyme/viewrecipe'> <h2>{{timepoint.date}}</h2></a>"
+           console.log("timepoint");
+           console.log("{{timepoint}}");
+          $("#timeline").append(divTag + contentDivTag + hrefTag + "<p>{{timepoint.story}}</p></div></div>");                  
+        {% endfor %}
+  });
+  </script>
 </html>
 
