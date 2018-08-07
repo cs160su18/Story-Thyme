@@ -20,12 +20,13 @@
      <div class="container-fluid">
         <div class="row top">
           <div class="col-6" align="left">
-            <a href="/thyme/addtimepoint" class="btn btn-defaut\lt"><i class="material-icons">arrow_back</i></a>
+            <a href="/thyme/addtimepoint" class="btn btn-default">
+              <i class="material-icons" style="font-size:48px">arrow_back</i></a>
           </div>
           <div class="col-6" align="right">
-            <button type="button" class="btn btn-default">
+           <a href="/thyme/homepage" class="btn btn-default">
               Cancel
-            </button>
+            </a>
           </div>
         </div>
         <form method="post" novalidate>
@@ -33,7 +34,7 @@
            <table>
               {{ form }}
            </table>
-           <button type="submit">Submit</button>
+           <button class="submit" type="submit" style="background-color: white">Submit</button>
         </form>
       </div>
 	</body>

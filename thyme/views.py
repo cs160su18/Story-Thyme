@@ -162,9 +162,36 @@ def writerecipe(request):
     form = RecipeForm()
   return render(request, 'thyme/writerecipe.html', {'form': form})
 
+def addtimepoint(request): 
+  """ Save a new Timepoint and render the Add Timepoint view"""
+  print("add timepoint being called")
+  if request.method == 'POST':
+    print("timepoint form is valid")
+    form = TimepointForm(request.POST)
+    if form.is_valid():
+      date = form.cleaned_data['date']
+      story = form.cleaned_data['story']
+    
+      # create a new Timepoint and save it to Database
+      foodUser = FoodUser.objects.filter(user=request.user)[0]
+      timepoint = Timepoint(date=date, story=story, author=foodUser)  
+      # TO DO: fill in the Timeline field of Timepoint with info from previous page     
+      timepoint.save()
+  else:
+    form = TimepointForm()
+  return render(request, 'thyme/addtimepoint.html', {'form': form})
+
+def profile(request):
+  return render(request, 'thyme/profile.html')
+
+def family(request):
+  return render(request, 'thyme/family.html')
+
 ## MARK: - Viewing Timelines and Recipes
 
+
 def thymeline(request):
+  
   return render(request, 'thyme/thymeline.html')
 
 def viewrecipe(request):
@@ -175,8 +202,7 @@ def viewrecipe(request):
 def profile(request):
   return render(request, 'thyme/profile.html')
 
-def family(request):
-  return render(request, 'thyme/family.html')
+
 
 def mycontributedthymelines(request):
   return render(request, 'thyme/mycontributedthymelines.html')
