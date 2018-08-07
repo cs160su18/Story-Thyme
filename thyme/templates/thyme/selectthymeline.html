@@ -47,18 +47,25 @@
           </div>
         </div>
       </div>
+<<<<<<< HEAD
+     </div>
+=======
 <!--       <div class="row">
         <div class=col-12 id="thymelines">
           <!-- append timelines here. -->
         </div>
   
+>>>>>>> 19ad86a79f92e0d8ae689eacd91552338de99f48
     <script>
+      var thymelinePanelTemplateStart =  "<div class='row' align='center'> <div class='col-12 text-center'> <div class='panel panel-default' id='thymelines'> <a href='/thyme/addtimepoint' class='btn btn-light btn-block'> <h3>"
+      var thymelinePanelTemplateEnd = "</h3> </a> </div> </div> </div>"
+      
       $(document).ready(function() {
         console.log("Hello World!");
         console.log("{{data.values}}");
         {% for timeline in data.values %}
           console.log("{{timeline.dishName}}");
-          $("#thymelines").append("<p>" + "{{timeline.dishName}}" + "</p>");
+          $("#thymelines").append(thymelinePanelTemplateStart + "{{timeline.dishName}}" + thymelinePanelTemplateEnd);
         {% endfor %}
       });
     </script>
