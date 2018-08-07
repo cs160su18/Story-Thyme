@@ -186,11 +186,7 @@ def writerecipe(request):
 #     form = TimepointForm()
 #   return render(request, 'thyme/addtimepoint.html', {'form': form})
 
-def profile(request):
-  return render(request, 'thyme/profile.html')
 
-def family(request):
-  return render(request, 'thyme/family.html')
 
 ## MARK: - Viewing Timelines and Recipes
 
@@ -230,6 +226,25 @@ def viewrecipe(request,timepointId):
 
 def profile(request):
   return render(request, 'thyme/profile.html')
+
+def family(request):
+  print("family request from views.py")
+  data = {}
+  data['firstName'] = request.user.first_name # does presume there is a first and last name!
+  data['lastName'] = request.user.last_name
+  print("First and last name", data['firstName'], data['lastName'])
+  
+  family = FoodUser.objects.get(user=request.user).family
+  print("Family", family)
+  
+  familyTimelines = Timeline.objects.filter(family=family)
+  data['timelines'] = familyTimelines
+  print("family timelines", familyTimelines)
+
+  members = FoodUser.objects.filter(family=family)
+  data['members'] = members
+  print("family members", members)
+  return render(request, 'thyme/family.html', data)
 
 def mycontributedthymelines(request):
   foodUser = FoodUser.objects.get(user=request.user)

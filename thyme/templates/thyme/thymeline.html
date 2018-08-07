@@ -35,30 +35,24 @@
         </div>
       </div>
     </div>
-    
-
-
     <!-- Timeline -->
-
     <div class="timeline" id="timeline">
     </div>
-  </body>
-  
-  <script>
-    
-   var divTag = "<div class='container right' id='toRecipeContainer'>"
-   var contentDivTag = "<div class='content'>"
+  </body> 
+  <script>  
+     var divTag = "<div class='container right' id='toRecipeContainer'>"
+     var contentDivTag = "<div class='content'>"
 
-   $(document).ready(function() {
-        console.log("script");
-        {% for timepoint in timepoints %}
-           var hrefTag = "<a href='/thyme/viewrecipe/{{timepoint.id}}' id='toRecipe'> <h2>{{timepoint.date}}</h2></a>"
-           console.log("timepoint");
-           console.log("{{timepoint}}");
-          $("#timeline").append(divTag + contentDivTag + hrefTag + "<p>{{timepoint.story}}</p></div></div>");                  
-        {% endfor %}
+     $(document).ready(function() {
+          console.log("script");
+          {% for timepoint in timepoints %}
+             var hrefTag = "<a href='/thyme/viewrecipe/{{timepoint.id}}' id='toRecipe'> <h2>{{timepoint.date}}</h2></a>"
+             console.log("timepoint");
+             console.log("{{timepoint}}");
+            $("#timeline").append(divTag + contentDivTag + hrefTag + "<p>{{timepoint.story}}</p></div></div>");                  
+          {% endfor %}
 
-  });
+    });
   </script>
 </html>
 
