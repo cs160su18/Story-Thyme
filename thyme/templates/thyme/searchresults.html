@@ -55,17 +55,41 @@
 /*      
       Pseudocode:
       1. DONE; Want to make displayed timelines clickable elements 
-      2. Detect click on one of them, and pass that timeline's PK from searchresults>thymeline 
+      2. Detect click on one of them (so far: clicks detect, but not WHICH one it is)
+      3. Pass that timeline's PK from searchresults>thymeline 
          via same method as homepage>searchresults
 */      
       var panelTag = "<div class='panel panel-default' id='thymelines'>"
-      var hrefTag = "<a href='/thyme/thymeline' class='btn-med btn-light btn-block'>"
+      var hrefTag = "<a id='href' href='' class='btn-med btn-light btn-block'>"
+//             var hrefTag = "<a id='href' href='/thyme/thymeline/' class='btn-med btn-light btn-block'>"
 
       $(document).ready(function() {
         {% for timeline in data.values %}
           console.log("{{timeline.display_text}}");
-           $("#timelines").append(panelTag + hrefTag + "{{timeline.display_text}}" + "</a></div>");                 
+           $("#timelines").append(panelTag + hrefTag + "{{timeline.display_text}}" + "</a></div>"); 
+         
+         // may need to change href ID based on a counter
+         // then from that unique one, do something like:
+         
+         /* 
+         
+         $("#thymelines").click(function() {
+            console.log("CLICKED A TIMELINE");
+           // find the timeline.display_text somehow and put that in
+            $("#href").attr('href', "../thymeline/" + $("#href").val());
+          });
+          
+          */
+
         {% endfor %}
+        
+          $("#thymelines").click(function() {
+            console.log("CLICKED A TIMELINE");
+           // find the timeline.display_text somehow and put that in
+            $("#href").attr('href', "../thymeline/" + document.getElementById("thymelines").innerHTML);
+          });
+        
+        
       });
          
     </script>
