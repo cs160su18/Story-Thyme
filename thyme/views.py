@@ -231,7 +231,11 @@ def viewrecipe(request,timepointId):
 def profile(request):
   return render(request, 'thyme/profile.html')
 
-
-
 def mycontributedthymelines(request):
-  return render(request, 'thyme/mycontributedthymelines.html')
+  foodUser = FoodUser.objects.get(user=request.user)
+  print("!! user is:", request.user, " food user: ", foodUser)
+  timepoints = Timepoint.objects.filter(author=foodUser)
+  timelines = set([tp.timeline for tp in timepoints if tp.timeline is not None]) 
+  print("timelines", timelines)
+  
+  return render(request, 'thyme/mycontributedthymelines.html', {'timelines': timelines})

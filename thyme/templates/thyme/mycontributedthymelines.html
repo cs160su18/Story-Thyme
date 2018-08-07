@@ -28,14 +28,22 @@
           <h3>Thymelines I've Contributed To</h3>
         </div>
       </div>
-      <div class="row">
-        <br/>
+      <div class="row" id="thymelines">        
       </div>
-      <div class="row small">
-        <div class="col-12 text-center">
-          <a href="/thyme/thymeline" class="btn btn-default" style="background-color: white">*Contributed Thymeline</a>
-        </div>
-      </div>
+     
+      
     </div>
   </body>
+  <script>
+    
+     var divTag = "<div class='row small'><div class='col-12 text-center'>"
+     $(document).ready(function() {
+          console.log("script");
+          {% for timeline in timelines %}
+            var hrefTag = "<a href='/thyme/thymeline/{{timeline.id}}' class='btn btn-default' style='background-color: white'>{{timeline}}</a>"
+            $("#thymelines").append(divTag + hrefTag + "</div></div>");                  
+          {% endfor %}
+
+    });
+  </script>
 </html>
