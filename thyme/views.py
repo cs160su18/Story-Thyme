@@ -16,7 +16,6 @@ def homepage(request):
   
   print("Hello World! From homepage views.py")
   return render(request, 'thyme/homepage.html')
-
     
 # BEGIN - SEARCHING THYMELINES FROM HOMEPAGE 
 def searchresults(request, dishName=''):
@@ -131,6 +130,7 @@ def addtimepoint(request, dishName=''):
       print(timeline);
       # TO DO: fill in the Timeline field of Timepoint with info from previous page     
       timepoint.save()
+
   else:
     form = TimepointForm()
   return render(request, 'thyme/addtimepoint.html', {'form': form})
@@ -160,7 +160,7 @@ def writerecipe(request):
       foodUser = FoodUser.objects.filter(user=request.user)[0] 
       
       # save recipe to latest time point created by this user
-      latestTimePoint = Timepoint.objects.filter(author=foodUser).order_by('-id')[0]
+      latestTimePoint = Timepoint.objects.filter(author=foodUser).order_by('-date')[0]
       latestTimePoint.recipe = recipe
       latestTimePoint.save() 
   else:
@@ -212,9 +212,6 @@ def thymeline(request, thymelineId):
   # also extract all timepoints, their dates and stories
   return render(request, 'thyme/thymeline.html', data)
 
-
- 
-
 def viewrecipe(request,timepointId):
   timepoint = Timepoint.objects.filter(id=timepointId)[0]      
   recipe = timepoint.recipe
@@ -225,7 +222,10 @@ def viewrecipe(request,timepointId):
 ## MARK: - User Profile, Family, and Contribution pages
 
 def profile(request):
-  return render(request, 'thyme/profile.html')
+  data = {}
+  data['firstName'] = request.user.first_name
+  data['lastName'] = request.user.last_name
+  return render(request, 'thyme/profile.html', data)
 
 def family(request):
   print("family request from views.py")
