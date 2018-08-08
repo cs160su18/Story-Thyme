@@ -101,9 +101,7 @@ def existingTimelinesHelper(timeline):
 
 def createthymeline(request):
   """Render createthymeline.html and create a new Timeline with dish name, family and family name."""
-  
   if request.method == 'POST':
-    form = TimelineForm(request.POST)
     newTimelineData = json.loads(request.body.decode('ASCII'));
     dishName = newTimelineData['dishName'];
     foodUser = FoodUser.objects.filter(user=request.user)[0] 
@@ -112,10 +110,8 @@ def createthymeline(request):
                           dishName=dishName, 
                           family=family)
     timeline.save()
-  else:
-    form = TimelineForm()
-        
-  return render(request, 'thyme/createthymeline.html', {'form': form})
+
+  return render(request, 'thyme/createthymeline.html')
 
 def addtimepoint(request, dishName=''): 
   """Render addtimepoint.html, save a new Timepoint and render the Add Timepoint view"""
@@ -133,7 +129,6 @@ def addtimepoint(request, dishName=''):
       print(timeline);
       # TO DO: fill in the Timeline field of Timepoint with info from previous page     
       timepoint.save()
-
   else:
     form = TimepointForm()
   return render(request, 'thyme/addtimepoint.html', {'form': form})
@@ -170,31 +165,7 @@ def writerecipe(request):
     form = RecipeForm()
   return render(request, 'thyme/writerecipe.html', {'form': form})
 
-# def addtimepoint(request): 
-#   """ Save a new Timepoint and render the Add Timepoint view"""
-#   print("add timepoint being called")
-#   if request.method == 'POST':
-#     print("timepoint form is valid")
-#     form = TimepointForm(request.POST)
-#     if form.is_valid():
-#       date = form.cleaned_data['date']
-#       story = form.cleaned_data['story']
-    
-#       # create a new Timepoint and save it to Database
-#       foodUser = FoodUser.objects.filter(user=request.user)[0]
-#       timepoint = Timepoint(date=date, story=story, author=foodUser)  
-#       # TO DO: fill in the Timeline field of Timepoint with info from previous page     
-#       timepoint.save()
-#   else:
-#     form = TimepointForm()
-#   return render(request, 'thyme/addtimepoint.html', {'form': form})
-
-
-
 ## MARK: - Viewing Timelines and Recipes
-
-
-
 
 def thymeline(request, thymelineId):
   print("from thymeline in views.py")

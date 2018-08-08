@@ -40,10 +40,16 @@
           {{ form }}
          </table>  
          <br>           
-        <button type="submit" class="save" style="background-color: white">Save</button>
+        <button type="submit" class="save" onclick="alertFunction()" style="background-color: white">Save</button>
       </form>
 
     </div>
+    <script>
+      function alertFunction() {
+        alert("You have added a Timepoint to a timeline.\n"
+               + "Click on Next to proceed to the adding a recipe to your timepoint.");
+      };
+    </script>
   </body>
 </html>
 

@@ -34,8 +34,14 @@
            <table>
               {{ form }}
            </table>
-           <button class="submit" type="submit" style="background-color: white">Submit</button>
+           <button class="submit" type="submit"  onclick="alertFunction()" style="background-color: white">Submit</button>
         </form>
       </div>
+    <script>
+      function alertFunction() {
+        alert("You have added a recipe to your timepoint. \n"
+             + "Click Cancel to go back to the homepage.");
+      };
+    </script>
 	</body>
 </html>
