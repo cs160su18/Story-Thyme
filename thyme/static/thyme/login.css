@@ -38,12 +38,13 @@ button {
    border-width: 1px;
    border-color: 'black';
    font-size: 60px;
+  
  }
 
 form {
    width: 375px;
    height: 50px;
    font-size: 60px;
-   align-content: center;
+   align-content: left;
   
 }

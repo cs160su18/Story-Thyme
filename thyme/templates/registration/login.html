@@ -11,22 +11,31 @@
   
 
 
+<div class="row">
+  
 
-<div class="col-12 text-center">
+<div class="col-12 text-center" align="center">
           <img src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/38487562_1215930171883348_4500901580454756352_n.jpg?_nc_cat=0&oh=89b2708f3a807acf4a7e4f4d0184442d&oe=5C105333"  
                height="500" width="580" class="center"> </div> 
-  <form method="post" align="center">
+    </div>
+  <div class="row">
+    <div class="col-12">
+      
+ 
+    
+  <form method="post" align="left">
   {% csrf_token %}
   {{ form.as_p }}
-  <div class="row">
-    <div class="col-6">
+
       
    
 
-  <button type="submit" style ="background-color: white" align="right">Login</button>
-    </div>
-     </div>
+  <button type="submit" style ="background-color: white">Login</button>
+   
+     
 </form>
+  </div>
+  </div>
     </body>
 </html>
 
