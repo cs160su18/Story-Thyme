@@ -29,5 +29,10 @@ input {
 
 .form-control{
   height: 100px;
+  font-size: 50px;
+}
+
+input, select, textarea { 
+font-size: 80%; 
 }
 
