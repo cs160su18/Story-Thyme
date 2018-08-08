@@ -101,14 +101,14 @@ def createthymeline(request):
   
   if request.method == 'POST':
     form = TimelineForm(request.POST)
-    if form.is_valid():
-      dish_name = form.cleaned_data['dish_name']
-      foodUser = FoodUser.objects.filter(user=request.user)[0] 
-      family = foodUser.family
-      timeline = Timeline(familyName=family.surname, 
-                          dishName=dish_name, 
+    newTimelineData = json.loads(request.body.decode('ASCII'));
+    dishName = newTimelineData['dishName'];
+    foodUser = FoodUser.objects.filter(user=request.user)[0] 
+    family = foodUser.family
+    timeline = Timeline(familyName=family.surname, 
+                          dishName=dishName, 
                           family=family)
-      timeline.save()
+    timeline.save()
   else:
     form = TimelineForm()
         
