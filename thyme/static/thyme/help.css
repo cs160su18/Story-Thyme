@@ -1,0 +1,39 @@
+h2 {
+  font-family: 'Amaranth', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  background-color: rgb(231, 247, 246)
+  color: rgb(0, 104, 55); 
+  font-size: 100px;
+}
+
+h3 {
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: rgb(0, 104, 55);
+  font-size: 50px;
+}
+
+h4 {
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: rgb(0, 104, 55);
+  font-size: 30px;
+}
+
+body {
+  background-color: rgb(231, 247, 246);
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  color: rgb(0, 104, 55);
+  font-size: 30px;
+  
+}
+
+.material-icons {
+  font-size: 48px;
+  color: rgb(0, 172, 148); 
+}

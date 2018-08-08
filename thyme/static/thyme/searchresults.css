@@ -1,6 +1,4 @@
-.row {
-  margin-bottom: 20px;
-}
+
 
 h1 {
   font-family: 'Amaranth', sans-serif;
@@ -31,7 +29,6 @@ h3 {
 }
 
 .row {
- 
   padding-right: 20px;
   padding-left: 20px;
   margin-bottom: 20px;
@@ -46,31 +43,6 @@ font-size: 60px;
 }
 
 
- input {
-   width: 1000px;
-   height: 100px;
-   border-style: solid;
-   border-width: 1px;
-   border-color: 'black';
-   font-family: raleway, sans-serif;
-   font-style: normal;
-   font-weight: 300;
-   color: rgb(87, 87, 87); 
- }
-
-
-textarea {
-  font-family: raleway, sans-serif;
-font-style: normal;
-font-weight: 300;
-}
-
-form {
-  font-family: raleway, sans-serif;
-  font-style: normal;
-  font-weight: 300;
-}
-
  .btn {
   background-color: "white";
   color: rgb(0, 172, 148);
@@ -81,10 +53,4 @@ form {
    font-size: 48px;
 }
 
-.form-control {
-  width: 1000px;
-}
 
-.form-inline {
-  width: 1000px;
-}
