@@ -4,14 +4,13 @@
 
 <html>
 	<head>
-		<title></title>
+		<title>My Contributed Thymelines</title>
 
 		<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="{% static '/thyme/vendor/bootstrap/css/bootstrap.css' %}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
 		<link rel="stylesheet" type="text/css" href="{% static '/thyme/mycontributedthymelines.css' %}" />
     <link href="https://fonts.googleapis.com/css?family=Amaranth:700" rel="stylesheet">
-
 
 		<script src="{% static '/thyme/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
 		<script src="{% static '/thyme/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
@@ -28,6 +27,7 @@
           <h4>Thymelines I've Contributed To</h4>
         </div>
       </div>
+
       <div class="row" id="thymelines" align="center" style="text-center">        
       </div>
      
@@ -35,7 +35,6 @@
     </div>
   </body>
   <script>
-    
      var divTag = "<div class='row small'><div class='col-12 text-center'>"
      $(document).ready(function() {
           console.log("script");
@@ -43,7 +42,6 @@
             var hrefTag = "<a href='/thyme/thymeline/{{timeline.id}}' class='btn btn-default' style='background-color: white'>{{timeline}}</a>"
             $("#thymelines").append(divTag + hrefTag + "</div></div>");                  
           {% endfor %}
-
     });
   </script>
 </html>
