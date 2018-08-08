@@ -12,6 +12,14 @@
 
 } 
 
+.btn {
+  background-color: "white";
+  color: rgb(0, 172, 148);
+  font-size: 60px;
+  height: 100px;
+  font-weight: 300;
+}
+
  .btn-med{
   background-color: "white";
   color: rgb(0, 172, 148);
@@ -34,18 +42,22 @@
    margin-left: 20px;
 }   
 
+
 h4 {
-  text-transform: uppercase;
-  padding: 20px;
-  
-}
-h3 {
   font-family: raleway, sans-serif;
   font-style: normal;
   font-weight: 700;
   color: rgb(0, 104, 55); 
   font-size: 50px;
   
+}
+
+h3 {
+  background-color: "white";
+  color: rgb(0, 172, 148);
+  font-size: 60px;
+  height: 100px;
+  font-weight: 300;
 }
 
 .search {

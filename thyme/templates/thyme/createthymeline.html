@@ -25,11 +25,7 @@
             <i class="material-icons" style="font-size:48px">arrow_back</i>
           </a>
         </div>
-        <div class="col-9" align="right">
-          <a id="addtimepointHREF" href="" class="btn btn-default btn-sm">
-            Next
-          </a>
-        </div>
+        
       </div>
       <div class="row">
         <div class="col-12 text-center" align="center">
@@ -38,64 +34,39 @@
       </div>
       <div class="row" align="center">
         <div class="col-12">
-          <input id="dishNameInput" type="text" class="form-control" placeholder="Enter thymeline name here..">
+          <form method="post" novalidate>
+             {% csrf_token %}
+             <table>
+              {{ form }}
+             </table>
+             <button type="submit" style="color: rgb(0, 104, 55); background-color=white">Create</button>
+          </form>        
         </div>
       </div> 
-     <div class="row" align="right">
-      <div class="col-12" align="right">
-        <a class="btn btn-default btn-sm" id="submitThymeline" style="background-color: white">
-          Add a story and recipe segment 
-          <br/> to your new thymeline!
-        </a>
+      <div class="row">
+        <br/>
       </div>
+       <div class="row">
+        <br/>
+      </div>
+       <div class="row">
+        <br/>
+      </div>
+       <div class="row">
+        <br/>
+      </div>
+ 
+      
+     <div class="row" align="right">
+    <div class="col-12" align="right">
+      <a href="/thyme/addtimepoint" class="btn btn-default btn-sm" style="background-color: white">
+          Add a story and recipe segment 
+        <br/> to your new thymeline!
+        </a>
     </div>
-  </div>
-  <script>
-      $(document).ready(function() {
-        function getCookie(name) {
-          var cookieValue = null;
-          if (document.cookie && document.cookie !== '') {
-              var cookies = document.cookie.split(';');
-              for (var i = 0; i < cookies.length; i++) {
-                  var cookie = jQuery.trim(cookies[i]);
-                  // Does this cookie string begin with the name we want?
-                  if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                      break;
-                  }
-              }
-          }
-          return cookieValue;
-        }
-        var csrftoken = getCookie('csrftoken');
-        
-        // Function gets the value in a given input box
-        function getData(inputKey) {
-          return $(inputKey).val()
-        }
-        
-        // Collects all the values when I hit submit
-        $("#submitThymeline").click(function() {
-          var postdata = {
-            'dishName': getData("#dishNameInput"),
-            'csrfmiddlewaretoken': csrftoken
-          };
-          
-          $.ajax({
-            url: "../../thyme/createthymeline/",
-            method: "POST",
-            headers: { "X-CSRFToken": csrftoken},
-            data: JSON.stringify(postdata),
-            contentType: "application/json",
-            dataType: "json"
-          });
-        });
-        
-        $("#submitThymeline").click(function() {
-          $("#addtimepointHREF").attr('href', "../addtimepoint/" + $("#dishNameInput").val());
-        });
-      });
-  </script>
-</body>
+    </div>
+</div>
+      
+  </body>
 
 </html>
