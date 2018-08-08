@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title></title>
+
+		<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{% static '/thyme/vendor/bootstrap/css/bootstrap.css' %}" />
+
+		<script src="{% static '/thyme/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static '/thyme/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
+
+	</head>
+  
+	<body>
+    <div class="container-fluid">
+       <div class="row" style="background-color: rgb(245, 245, 245); height: 100px;">
+        <div class="col-6" align="left">
+            <a href="/thyme/homepage" class="btn btn-light"><i class="material-icons">home</i></a>            
+        </div>
+        
+      </div>
+      <div>
+        <h2>FAQ</h2>
+        <h3>
+          How do I view timelines (thymelines) I've added recipes to?
+        </h3>
+        <p>          
+          Go to user profile by clicking the person icon in the top left of the Home or Search Results page. 
+          Tapping on "My Thymelines" should lead you to a page listing all timelines you have contributed to!
+        </p>
+        <h3>
+          How does the timeline system work in general?
+        </h3>
+        <p>          
+          Timelines are organized by family. The "Smith Apple Pie Timeline", for example, would most likely contain 
+          recipes spanning several generations, from the great-grandmother to the grandmother to your current recipe. These
+          recipes are organized by the rough date around which they were created, and you view the "story" of a family recipe 
+          when you view its timeline. The story of a family recipe is comprised of all the events that impacted recipes and 
+          what changed in them. 
+        </p>          
+        <p>
+          E.g. perhaps grandma decided to add brown sugar to the crust of the pie for the first time, or 
+          perhaps you decided to substitute coconut oil for butter in order to make the recipe more healthy, or perhaps 
+          your family immigrated to America fifty years ago, causing the family recipe to resemble American apple pie more than
+          the original Dutch version. Tapping on the specific story that interests you will take you to its recipe.
+        </p>
+
+        <h4>My question wasn't answered here. Where can I contact the developers?</h4>
+        <p>
+          We are happy to answer any questions you may have. Please contact us at StoryThyme@gmail.com regarding any issues
+          or questions you may have!
+        </p>
+        
+      </div>
+     
+     
+    </div>
+    
+	</body>
+</html>
+
+

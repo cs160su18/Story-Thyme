@@ -16,6 +16,9 @@ def homepage(request):
   
   print("Hello World! From homepage views.py")
   return render(request, 'thyme/homepage.html')
+
+def help(request):
+  return render(request, 'thyme/help.html')
     
 # BEGIN - SEARCHING THYMELINES FROM HOMEPAGE 
 def searchresults(request, dishName=''):
