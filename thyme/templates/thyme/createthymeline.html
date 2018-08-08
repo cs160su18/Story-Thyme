@@ -31,7 +31,6 @@
           </a>
         </div>
       </div>
-      </div>
       <div class="row">
         <div class="col-12 text-center" align="center">
           <h1>Create Recipe Thymeline</h1>
@@ -43,12 +42,15 @@
           <input class="form-control mr-sm-2" id="dishNameInput" type="text" placeholder="Enter thymeline name here.." aria-label="Search">
 <!--           <button class="btn btn-default btn-sm" onclick="alertFunction()" id="submitThymeline" style="background-color: white">Submit</button> -->
 <!--           <button class="btn btn-outline-success btn-rounded btn-sm my-0" id="submitThymeline" type="submit">Submit</div> -->
-      </div> 
+        </div>
+       </div>
        <div class="row" align="center" style="padding: 20px">
         <div class="col-12" align="center">
-          <button class="btn btn-outline-success btn-rounded btn-sm my-0" id="submitThymeline" type="submit">Submit</div>
+          <button class="btn btn-outline-success btn-rounded btn-sm my-0" type="submit" id="submitThymeline"  onclick="alertFunction()">
+            Submit
+          </button>
          </div>
-       </div> 
+       </div>
       <div class="row">
         <br/>
       </div>
@@ -60,8 +62,8 @@
       </div>
        <div class="row">
         <br/>
-      </div>
- 
+      </div>    
+ </div>
     <script>
       $(document).ready(function() {
         function getCookie(name) {
